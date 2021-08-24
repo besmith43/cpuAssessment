@@ -1,0 +1,225 @@
+// Validating benchmarks:
+// ***** BenchmarkRunner: Start   *****
+// ***** Found 2 benchmark(s) in total *****
+// ***** Building 1 exe(s) in Parallel: Start   *****
+Unable to find .sln or .csproj file. Will use current directory C:\Users\besmith\Development\cpuAssessment to search for project file. If you don't use .sln file on purpose it should not be a problem.
+// start dotnet restore  /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true in C:\Users\besmith\Development\cpuAssessment\src\cpuAssessment.Benchmark\bin\Release\net5.0\d6130728-2028-41d3-96ef-a3ac3b495882
+// command took 0.99s and exited with 0
+// start dotnet build -c Release  --no-restore /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true in C:\Users\besmith\Development\cpuAssessment\src\cpuAssessment.Benchmark\bin\Release\net5.0\d6130728-2028-41d3-96ef-a3ac3b495882
+// command took 1.63s and exited with 0
+// ***** Done, took 00:00:02 (2.69 sec)   *****
+// Found 2 benchmarks:
+//   ClassBenchmarks.IPComparisonSerial: DefaultJob
+//   ClassBenchmarks.IPComparisonParallel: DefaultJob
+
+// **************************
+// Benchmark: ClassBenchmarks.IPComparisonSerial: DefaultJob
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "d6130728-2028-41d3-96ef-a3ac3b495882.dll" --benchmarkName "cpuAssessment.Benchmark.Benchmarks.ClassBenchmarks.IPComparisonSerial" --job "Default" --benchmarkId 0 in C:\Users\besmith\Development\cpuAssessment\src\cpuAssessment.Benchmark\bin\Release\net5.0\d6130728-2028-41d3-96ef-a3ac3b495882\bin\Release\net5.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 5.0.9 (5.0.921.35908), X64 RyuJIT
+// GC=Concurrent Workstation
+// Job: DefaultJob
+
+OverheadJitting  1: 1 op, 177700.00 ns, 177.7000 us/op
+WorkloadJitting  1: 1 op, 264206200.00 ns, 264.2062 ms/op
+
+WorkloadPilot    1: 2 op, 524657700.00 ns, 262.3288 ms/op
+
+WorkloadWarmup   1: 2 op, 521272600.00 ns, 260.6363 ms/op
+WorkloadWarmup   2: 2 op, 521750600.00 ns, 260.8753 ms/op
+WorkloadWarmup   3: 2 op, 528489300.00 ns, 264.2447 ms/op
+WorkloadWarmup   4: 2 op, 532977500.00 ns, 266.4887 ms/op
+WorkloadWarmup   5: 2 op, 528191700.00 ns, 264.0959 ms/op
+WorkloadWarmup   6: 2 op, 527321700.00 ns, 263.6608 ms/op
+WorkloadWarmup   7: 2 op, 527151500.00 ns, 263.5758 ms/op
+WorkloadWarmup   8: 2 op, 529416200.00 ns, 264.7081 ms/op
+WorkloadWarmup   9: 2 op, 530276700.00 ns, 265.1384 ms/op
+WorkloadWarmup  10: 2 op, 529570100.00 ns, 264.7851 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 2 op, 526823700.00 ns, 263.4119 ms/op
+WorkloadActual   2: 2 op, 524182100.00 ns, 262.0910 ms/op
+WorkloadActual   3: 2 op, 526021300.00 ns, 263.0106 ms/op
+WorkloadActual   4: 2 op, 526344800.00 ns, 263.1724 ms/op
+WorkloadActual   5: 2 op, 526771200.00 ns, 263.3856 ms/op
+WorkloadActual   6: 2 op, 520259500.00 ns, 260.1298 ms/op
+WorkloadActual   7: 2 op, 521664500.00 ns, 260.8322 ms/op
+WorkloadActual   8: 2 op, 525201500.00 ns, 262.6008 ms/op
+WorkloadActual   9: 2 op, 528627100.00 ns, 264.3136 ms/op
+WorkloadActual  10: 2 op, 521775500.00 ns, 260.8877 ms/op
+WorkloadActual  11: 2 op, 522623100.00 ns, 261.3116 ms/op
+WorkloadActual  12: 2 op, 520574700.00 ns, 260.2873 ms/op
+WorkloadActual  13: 2 op, 526268800.00 ns, 263.1344 ms/op
+WorkloadActual  14: 2 op, 526123300.00 ns, 263.0616 ms/op
+WorkloadActual  15: 2 op, 522943200.00 ns, 261.4716 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 2 op, 526823700.00 ns, 263.4119 ms/op
+WorkloadResult   2: 2 op, 524182100.00 ns, 262.0910 ms/op
+WorkloadResult   3: 2 op, 526021300.00 ns, 263.0106 ms/op
+WorkloadResult   4: 2 op, 526344800.00 ns, 263.1724 ms/op
+WorkloadResult   5: 2 op, 526771200.00 ns, 263.3856 ms/op
+WorkloadResult   6: 2 op, 520259500.00 ns, 260.1298 ms/op
+WorkloadResult   7: 2 op, 521664500.00 ns, 260.8322 ms/op
+WorkloadResult   8: 2 op, 525201500.00 ns, 262.6008 ms/op
+WorkloadResult   9: 2 op, 528627100.00 ns, 264.3136 ms/op
+WorkloadResult  10: 2 op, 521775500.00 ns, 260.8877 ms/op
+WorkloadResult  11: 2 op, 522623100.00 ns, 261.3116 ms/op
+WorkloadResult  12: 2 op, 520574700.00 ns, 260.2873 ms/op
+WorkloadResult  13: 2 op, 526268800.00 ns, 263.1344 ms/op
+WorkloadResult  14: 2 op, 526123300.00 ns, 263.0616 ms/op
+WorkloadResult  15: 2 op, 522943200.00 ns, 261.4716 ms/op
+GC:  0 0 0 560 2
+Threading:  3 0 2
+
+// AfterAll
+// The benchmarking process did not quit on time, it's going to get force killed now.
+// Benchmark Process 20672 has exited with code 0
+
+Mean = 262.207 ms, StdErr = 0.335 ms (0.13%), N = 15, StdDev = 1.298 ms
+Min = 260.130 ms, Q1 = 261.100 ms, Median = 262.601 ms, Q3 = 263.153 ms, Max = 264.314 ms
+IQR = 2.054 ms, LowerFence = 258.019 ms, UpperFence = 266.234 ms
+ConfidenceInterval = [260.819 ms; 263.594 ms] (CI 99.9%), Margin = 1.388 ms (0.53% of Mean)
+Skewness = -0.2, Kurtosis = 1.55, MValue = 2
+
+// **************************
+// Benchmark: ClassBenchmarks.IPComparisonParallel: DefaultJob
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "d6130728-2028-41d3-96ef-a3ac3b495882.dll" --benchmarkName "cpuAssessment.Benchmark.Benchmarks.ClassBenchmarks.IPComparisonParallel" --job "Default" --benchmarkId 1 in C:\Users\besmith\Development\cpuAssessment\src\cpuAssessment.Benchmark\bin\Release\net5.0\d6130728-2028-41d3-96ef-a3ac3b495882\bin\Release\net5.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 5.0.9 (5.0.921.35908), X64 RyuJIT
+// GC=Concurrent Workstation
+// Job: DefaultJob
+
+OverheadJitting  1: 1 op, 164400.00 ns, 164.4000 us/op
+WorkloadJitting  1: 1 op, 381083800.00 ns, 381.0838 ms/op
+
+WorkloadWarmup   1: 1 op, 137928700.00 ns, 137.9287 ms/op
+WorkloadWarmup   2: 1 op, 130340700.00 ns, 130.3407 ms/op
+WorkloadWarmup   3: 1 op, 129479500.00 ns, 129.4795 ms/op
+WorkloadWarmup   4: 1 op, 130606500.00 ns, 130.6065 ms/op
+WorkloadWarmup   5: 1 op, 130739400.00 ns, 130.7394 ms/op
+WorkloadWarmup   6: 1 op, 129547000.00 ns, 129.5470 ms/op
+WorkloadWarmup   7: 1 op, 129123800.00 ns, 129.1238 ms/op
+WorkloadWarmup   8: 1 op, 128226900.00 ns, 128.2269 ms/op
+WorkloadWarmup   9: 1 op, 129556400.00 ns, 129.5564 ms/op
+WorkloadWarmup  10: 1 op, 128320600.00 ns, 128.3206 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 132139900.00 ns, 132.1399 ms/op
+WorkloadActual   2: 1 op, 128439700.00 ns, 128.4397 ms/op
+WorkloadActual   3: 1 op, 129381700.00 ns, 129.3817 ms/op
+WorkloadActual   4: 1 op, 128875200.00 ns, 128.8752 ms/op
+WorkloadActual   5: 1 op, 129234700.00 ns, 129.2347 ms/op
+WorkloadActual   6: 1 op, 131664400.00 ns, 131.6644 ms/op
+WorkloadActual   7: 1 op, 129655500.00 ns, 129.6555 ms/op
+WorkloadActual   8: 1 op, 131662700.00 ns, 131.6627 ms/op
+WorkloadActual   9: 1 op, 128846700.00 ns, 128.8467 ms/op
+WorkloadActual  10: 1 op, 130128400.00 ns, 130.1284 ms/op
+WorkloadActual  11: 1 op, 128547600.00 ns, 128.5476 ms/op
+WorkloadActual  12: 1 op, 128317400.00 ns, 128.3174 ms/op
+WorkloadActual  13: 1 op, 130200200.00 ns, 130.2002 ms/op
+WorkloadActual  14: 1 op, 128804600.00 ns, 128.8046 ms/op
+WorkloadActual  15: 1 op, 129948800.00 ns, 129.9488 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 132139900.00 ns, 132.1399 ms/op
+WorkloadResult   2: 1 op, 128439700.00 ns, 128.4397 ms/op
+WorkloadResult   3: 1 op, 129381700.00 ns, 129.3817 ms/op
+WorkloadResult   4: 1 op, 128875200.00 ns, 128.8752 ms/op
+WorkloadResult   5: 1 op, 129234700.00 ns, 129.2347 ms/op
+WorkloadResult   6: 1 op, 131664400.00 ns, 131.6644 ms/op
+WorkloadResult   7: 1 op, 129655500.00 ns, 129.6555 ms/op
+WorkloadResult   8: 1 op, 131662700.00 ns, 131.6627 ms/op
+WorkloadResult   9: 1 op, 128846700.00 ns, 128.8467 ms/op
+WorkloadResult  10: 1 op, 130128400.00 ns, 130.1284 ms/op
+WorkloadResult  11: 1 op, 128547600.00 ns, 128.5476 ms/op
+WorkloadResult  12: 1 op, 128317400.00 ns, 128.3174 ms/op
+WorkloadResult  13: 1 op, 130200200.00 ns, 130.2002 ms/op
+WorkloadResult  14: 1 op, 128804600.00 ns, 128.8046 ms/op
+WorkloadResult  15: 1 op, 129948800.00 ns, 129.9488 ms/op
+GC:  0 0 0 5192 1
+Threading:  19 0 1
+
+// AfterAll
+// The benchmarking process did not quit on time, it's going to get force killed now.
+// Benchmark Process 26712 has exited with code 0
+
+Mean = 129.723 ms, StdErr = 0.320 ms (0.25%), N = 15, StdDev = 1.240 ms
+Min = 128.317 ms, Q1 = 128.826 ms, Median = 129.382 ms, Q3 = 130.164 ms, Max = 132.140 ms
+IQR = 1.339 ms, LowerFence = 126.818 ms, UpperFence = 132.172 ms
+ConfidenceInterval = [128.398 ms; 131.048 ms] (CI 99.9%), Margin = 1.325 ms (1.02% of Mean)
+Skewness = 0.71, Kurtosis = 2.06, MValue = 2
+
+// ***** BenchmarkRunner: Finish  *****
+
+// * Export *
+  BenchmarkDotNet.Artifacts\results\cpuAssessment.Benchmark.Benchmarks.ClassBenchmarks-report.csv
+  BenchmarkDotNet.Artifacts\results\cpuAssessment.Benchmark.Benchmarks.ClassBenchmarks-report-github.md
+  BenchmarkDotNet.Artifacts\results\cpuAssessment.Benchmark.Benchmarks.ClassBenchmarks-report.html
+
+// * Detailed results *
+ClassBenchmarks.IPComparisonParallel: DefaultJob
+Runtime = .NET 5.0.9 (5.0.921.35908), X64 RyuJIT; GC = Concurrent Workstation
+Mean = 129.723 ms, StdErr = 0.320 ms (0.25%), N = 15, StdDev = 1.240 ms
+Min = 128.317 ms, Q1 = 128.826 ms, Median = 129.382 ms, Q3 = 130.164 ms, Max = 132.140 ms
+IQR = 1.339 ms, LowerFence = 126.818 ms, UpperFence = 132.172 ms
+ConfidenceInterval = [128.398 ms; 131.048 ms] (CI 99.9%), Margin = 1.325 ms (1.02% of Mean)
+Skewness = 0.71, Kurtosis = 2.06, MValue = 2
+-------------------- Histogram --------------------
+[127.658 ms ; 132.800 ms) | @@@@@@@@@@@@@@@
+---------------------------------------------------
+
+ClassBenchmarks.IPComparisonSerial: DefaultJob
+Runtime = .NET 5.0.9 (5.0.921.35908), X64 RyuJIT; GC = Concurrent Workstation
+Mean = 262.207 ms, StdErr = 0.335 ms (0.13%), N = 15, StdDev = 1.298 ms
+Min = 260.130 ms, Q1 = 261.100 ms, Median = 262.601 ms, Q3 = 263.153 ms, Max = 264.314 ms
+IQR = 2.054 ms, LowerFence = 258.019 ms, UpperFence = 266.234 ms
+ConfidenceInterval = [260.819 ms; 263.594 ms] (CI 99.9%), Margin = 1.388 ms (0.53% of Mean)
+Skewness = -0.2, Kurtosis = 1.55, MValue = 2
+-------------------- Histogram --------------------
+[260.124 ms ; 265.004 ms) | @@@@@@@@@@@@@@@
+---------------------------------------------------
+
+// * Summary *
+
+BenchmarkDotNet=v0.13.0, OS=Windows 10.0.19042.1165 (20H2/October2020Update)
+AMD Ryzen 7 5700G with Radeon Graphics, 1 CPU, 16 logical and 8 physical cores
+.NET SDK=6.0.100-preview.7.21379.14
+  [Host]     : .NET 5.0.9 (5.0.921.35908), X64 RyuJIT
+  DefaultJob : .NET 5.0.9 (5.0.921.35908), X64 RyuJIT
+
+
+|               Method |     Mean |   Error |  StdDev | Ratio | Rank | Gen 0 | Gen 1 | Gen 2 | Allocated |
+|--------------------- |---------:|--------:|--------:|------:|-----:|------:|------:|------:|----------:|
+| IPComparisonParallel | 129.7 ms | 1.33 ms | 1.24 ms |  0.49 |    1 |     - |     - |     - |   5,192 B |
+|   IPComparisonSerial | 262.2 ms | 1.39 ms | 1.30 ms |  1.00 |    2 |     - |     - |     - |     280 B |
+
+// * Legends *
+  Mean      : Arithmetic mean of all measurements
+  Error     : Half of 99.9% confidence interval
+  StdDev    : Standard deviation of all measurements
+  Ratio     : Mean of the ratio distribution ([Current]/[Baseline])
+  Rank      : Relative position of current benchmark mean among all benchmarks (Arabic style)
+  Gen 0     : GC Generation 0 collects per 1000 operations
+  Gen 1     : GC Generation 1 collects per 1000 operations
+  Gen 2     : GC Generation 2 collects per 1000 operations
+  Allocated : Allocated memory per single operation (managed only, inclusive, 1KB = 1024B)
+  1 ms      : 1 Millisecond (0.001 sec)
+
+// * Diagnostic Output - MemoryDiagnoser *
+
+
+// ***** BenchmarkRunner: End *****
+// ** Remained 0 benchmark(s) to run **
+Run time: 00:06:01 (361.66 sec), executed benchmarks: 2
+
+Global total time: 00:06:04 (364.36 sec), executed benchmarks: 2
+// * Artifacts cleanup *

@@ -1,7 +1,7 @@
-<Project>
+﻿<Project>
 <PropertyGroup>
     <Company>BSmith</Company>
-    <Version>1.0.0</Version>
+    <Version>1.0.76</Version>
     <AssemblyTitle>cpuAssessment</AssemblyTitle>
 </PropertyGroup>
 </Project>

@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "cpuAssessment/1.0.76": {
+        "dependencies": {
+          "cpuAssessment.Class": "1.0.76"
+        },
+        "runtime": {
+          "cpuAssessment.dll": {}
+        }
+      },
+      "cpuAssessment.Class/1.0.76": {
+        "runtime": {
+          "cpuAssessment.Class.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "cpuAssessment/1.0.76": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "cpuAssessment.Class/1.0.76": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

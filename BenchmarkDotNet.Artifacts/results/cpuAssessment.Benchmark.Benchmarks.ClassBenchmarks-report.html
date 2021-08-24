@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>cpuAssessment.Benchmark.Benchmarks.ClassBenchmarks-20210824-111244</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet=v0.13.0, OS=Windows 10.0.19042.1165 (20H2/October2020Update)
+AMD Ryzen 7 5700G with Radeon Graphics, 1 CPU, 16 logical and 8 physical cores
+.NET SDK=6.0.100-preview.7.21379.14
+  [Host]     : .NET 5.0.9 (5.0.921.35908), X64 RyuJIT
+  DefaultJob : .NET 5.0.9 (5.0.921.35908), X64 RyuJIT
+</code></pre>
+<pre><code></code></pre>
+
+<table>
+<thead><tr><th>            Method</th><th>Mean</th><th>Error</th><th>StdDev</th><th>Ratio</th><th>RatioSD</th><th>Rank</th><th>Gen 0</th><th>Gen 1</th><th>Gen 2</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>IPComparisonSerial</td><td>51.87 ms</td><td>0.495 ms</td><td>0.463 ms</td><td>1.00</td><td>0.00</td><td>3</td><td>-</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>IPComparisonParallel</td><td>25.44 ms</td><td>0.118 ms</td><td>0.105 ms</td><td>0.49</td><td>0.00</td><td>1</td><td>-</td><td>-</td><td>-</td><td>4,894 B</td>
+</tr><tr><td>IPComparisonCoroutine</td><td>297.85 ms</td><td>3.351 ms</td><td>2.799 ms</td><td>5.75</td><td>0.06</td><td>4</td><td>96000.0000</td><td>-</td><td>-</td><td>805,306,424 B</td>
+</tr><tr><td>IPComparisonAVX2Serial</td><td>45.73 ms</td><td>0.398 ms</td><td>0.372 ms</td><td>0.88</td><td>0.01</td><td>2</td><td>-</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>IPComparisonAVX2Parallel</td><td>25.37 ms</td><td>0.053 ms</td><td>0.050 ms</td><td>0.49</td><td>0.00</td><td>1</td><td>-</td><td>-</td><td>-</td><td>5,642 B</td>
+</tr></tbody></table>
+</body>
+</html>
