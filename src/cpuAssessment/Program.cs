@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Threading.Tasks;
 using cpuAssessment.cmd;
 using cpuAssessment.Class;
 
@@ -56,7 +57,7 @@ namespace cpuAssessment
             ByteIP[] testIPRangeArray = testIPRangeList.GenerateList();
             Int64 after_Array = GC.GetTotalMemory(false);
 
-            bool found = classLib.FindIPParallel(testIP, testIPRangeArray);
+            bool found = classLib.FindIPParallel(testIP, testIPRangeArray, new ParallelOptions { MaxDegreeOfParallelism = Environment.ProcessorCount });
 
             Console.WriteLine($"the size of an instance of the byteIP class is { after_testIP - before_testIP }");
 
@@ -92,7 +93,7 @@ namespace cpuAssessment
             Console.WriteLine($"Answer from the small avx2 run: { foundAVX2 }");
             Console.WriteLine($"Answer from the long run: { foundAVX22 }");
 
-            bool foundAVX2Parallel = classLib.FindIPAVX2Parallel(testIP, testIPRangeArray);
+            bool foundAVX2Parallel = classLib.FindIPAVX2Parallel(testIP, testIPRangeArray, new ParallelOptions { MaxDegreeOfParallelism = Environment.ProcessorCount });
 
             Console.WriteLine($"Answer from AVX2 Parallel: { foundAVX2Parallel }");
         }

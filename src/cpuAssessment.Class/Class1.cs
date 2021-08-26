@@ -42,11 +42,11 @@ namespace cpuAssessment.Class
             return containsFlag;
         }
 
-        public bool FindIPParallel(ByteIP ipCanidate, ByteIP[] ipPool)
+        public bool FindIPParallel(ByteIP ipCanidate, ByteIP[] ipPool, ParallelOptions numThreads)
         {
             bool containsFlag = false;
 
-            Parallel.ForEach(ipPool, (tempIP) => {
+            Parallel.ForEach(ipPool, numThreads, (tempIP) => {
                 bool q1Equal = ipCanidate.q1 == tempIP.q1;
                 bool q2Equal = ipCanidate.q2 == tempIP.q2;
                 bool q3Equal = ipCanidate.q3 == tempIP.q3;
@@ -143,7 +143,7 @@ namespace cpuAssessment.Class
             return containsFlag;
         }
 
-        public unsafe bool FindIPAVX2Parallel(ByteIP ipCandidate, ByteIP[] ipPool)
+        public unsafe bool FindIPAVX2Parallel(ByteIP ipCandidate, ByteIP[] ipPool, ParallelOptions numThreads)
         {
             bool containsFlag = false;
             int numLoops = ipPool.Length/8;
@@ -162,7 +162,7 @@ namespace cpuAssessment.Class
                     ipCandidate.q1, ipCandidate.q2, ipCandidate.q3, ipCandidate.q4
                 );
 
-                Parallel.For(0, numLoops-1, (loopCount, state) =>{
+                Parallel.For(0, numLoops-1, numThreads, (loopCount, state) =>{
                     int i = loopCount * 8;
 
                     Vector256<byte> comparables = Vector256.Create(

@@ -14,7 +14,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
-    "version": "1.0.76",
+    "version": "1.0.77",
     "restore": {
       "projectUniqueName": "C:\\Users\\besmith\\Development\\cpuAssessment\\src\\cpuAssessment.Class\\cpuAssessment.Class.csproj",
       "projectName": "cpuAssessment.Class",

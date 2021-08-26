@@ -6,10 +6,10 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v5.0": {
-      "cpuAssessment.Benchmark/1.0.76": {
+      "cpuAssessment.Benchmark/1.0.77": {
         "dependencies": {
           "BenchmarkDotNet": "0.13.0",
-          "cpuAssessment.Class": "1.0.76"
+          "cpuAssessment.Class": "1.0.77"
         },
         "runtime": {
           "cpuAssessment.Benchmark.dll": {}
@@ -961,7 +961,7 @@
           "System.Xml.XPath": "4.3.0"
         }
       },
-      "cpuAssessment.Class/1.0.76": {
+      "cpuAssessment.Class/1.0.77": {
         "runtime": {
           "cpuAssessment.Class.dll": {}
         }
@@ -969,7 +969,7 @@
     }
   },
   "libraries": {
-    "cpuAssessment.Benchmark/1.0.76": {
+    "cpuAssessment.Benchmark/1.0.77": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -1639,7 +1639,7 @@
       "path": "system.xml.xpath.xdocument/4.3.0",
       "hashPath": "system.xml.xpath.xdocument.4.3.0.nupkg.sha512"
     },
-    "cpuAssessment.Class/1.0.76": {
+    "cpuAssessment.Class/1.0.77": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

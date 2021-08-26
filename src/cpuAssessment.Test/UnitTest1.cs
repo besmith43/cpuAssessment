@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using Xunit;
 using cpuAssessment.Class;
 
@@ -59,7 +60,7 @@ namespace cpuAssessment.Test
 
             ByteIP[] testIPRangeArray = testIPRangeList.GenerateList();
 
-            bool found = testClass.FindIPParallel(testIP, testIPRangeArray);
+            bool found = testClass.FindIPParallel(testIP, testIPRangeArray, new ParallelOptions{ MaxDegreeOfParallelism = Environment.ProcessorCount });
 
             Assert.Equal(true, found);
         }

@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Running;
 using BenchmarkDotNet.Order;
@@ -18,6 +19,18 @@ namespace  cpuAssessment.Benchmark.Benchmarks
 
         public ByteIP[] testIPRangeArray;
 
+        public int maxNumThreads = Environment.ProcessorCount;
+
+        public int halfNumThreads = Environment.ProcessorCount / 2;
+
+        public ParallelOptions FullThreadCountOptions;
+
+        public ParallelOptions HalfThreadCountOptions;
+
+        public ParallelOptions TwoThreadCountOptions;
+
+        public ParallelOptions OneThreadCountOptions;
+
         public static Class1 testClass = new Class1();
 
         [GlobalSetup]
@@ -35,6 +48,22 @@ namespace  cpuAssessment.Benchmark.Benchmarks
             };
 
             testIPRangeArray = testIPRangeList.GenerateList();
+
+            FullThreadCountOptions = new ParallelOptions{
+                MaxDegreeOfParallelism = maxNumThreads
+            };
+
+            HalfThreadCountOptions = new ParallelOptions{
+                MaxDegreeOfParallelism = halfNumThreads
+            };
+
+            TwoThreadCountOptions = new ParallelOptions{
+                MaxDegreeOfParallelism = 2
+            };
+
+            OneThreadCountOptions = new ParallelOptions{
+                MaxDegreeOfParallelism = 1
+            };
         }
 /*
         [Benchmark]
@@ -56,9 +85,27 @@ namespace  cpuAssessment.Benchmark.Benchmarks
         }
 
         [Benchmark]
-        public void IPComparisonParallel()
+        public void IPComparisonMaxParallel()
         {
-            testClass.FindIPParallel(testIP, testIPRangeArray);
+            testClass.FindIPParallel(testIP, testIPRangeArray, FullThreadCountOptions);
+        }
+
+        [Benchmark]
+        public void IPComparisonHalfParallel()
+        {
+            testClass.FindIPParallel(testIP, testIPRangeArray, HalfThreadCountOptions);
+        }
+
+        [Benchmark]
+        public void IPComparisonTwoParallel()
+        {
+            testClass.FindIPParallel(testIP, testIPRangeArray, TwoThreadCountOptions);
+        }
+
+        [Benchmark]
+        public void IPComparisonOneParallel()
+        {
+            testClass.FindIPParallel(testIP, testIPRangeArray, OneThreadCountOptions);
         }
 
         [Benchmark]
@@ -77,9 +124,27 @@ namespace  cpuAssessment.Benchmark.Benchmarks
         }
 
         [Benchmark]
-        public void IPComparisonAVX2Parallel()
+        public void IPComparisonAVX2MaxParallel()
         {
-            testClass.FindIPAVX2Parallel(testIP, testIPRangeArray);
+            testClass.FindIPAVX2Parallel(testIP, testIPRangeArray, FullThreadCountOptions);
+        }
+
+        [Benchmark]
+        public void IPComparisonAVX2HalfParallel()
+        {
+            testClass.FindIPAVX2Parallel(testIP, testIPRangeArray, HalfThreadCountOptions);
+        }
+
+        [Benchmark]
+        public void IPComparisonAVX2TwoParallel()
+        {
+            testClass.FindIPAVX2Parallel(testIP, testIPRangeArray, TwoThreadCountOptions);
+        }
+
+        [Benchmark]
+        public void IPComparisonAVX2OneParallel()
+        {
+            testClass.FindIPAVX2Parallel(testIP, testIPRangeArray, OneThreadCountOptions);
         }
  
     }

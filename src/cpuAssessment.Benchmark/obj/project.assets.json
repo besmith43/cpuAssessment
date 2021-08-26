@@ -1581,7 +1581,7 @@
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
       },
-      "cpuAssessment.Class/1.0.76": {
+      "cpuAssessment.Class/1.0.77": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "compile": {
@@ -5420,7 +5420,7 @@
         "system.xml.xpath.xdocument.nuspec"
       ]
     },
-    "cpuAssessment.Class/1.0.76": {
+    "cpuAssessment.Class/1.0.77": {
       "type": "project",
       "path": "../cpuAssessment.Class/cpuAssessment.Class.csproj",
       "msbuildProject": "../cpuAssessment.Class/cpuAssessment.Class.csproj"
@@ -5429,7 +5429,7 @@
   "projectFileDependencyGroups": {
     "net5.0": [
       "BenchmarkDotNet >= 0.13.0",
-      "cpuAssessment.Class >= 1.0.76"
+      "cpuAssessment.Class >= 1.0.77"
     ]
   },
   "packageFolders": {
@@ -5439,7 +5439,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
-    "version": "1.0.76",
+    "version": "1.0.77",
     "restore": {
       "projectUniqueName": "C:\\Users\\besmith\\Development\\cpuAssessment\\src\\cpuAssessment.Benchmark\\cpuAssessment.Benchmark.csproj",
       "projectName": "cpuAssessment.Benchmark",
