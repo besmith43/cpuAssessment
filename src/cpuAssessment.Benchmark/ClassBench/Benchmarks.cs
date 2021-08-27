@@ -79,37 +79,37 @@ namespace  cpuAssessment.Benchmark.Benchmarks
         }
 */
         [Benchmark(Baseline = true)]
-        public void IPComparisonSerial()
+        public void IPComparisonScalarSerial()
         {
             testClass.FindIPSerial(testIP, testIPRangeArray);
         }
 
         [Benchmark]
-        public void IPComparisonMaxParallel()
+        public void IPComparisonScalarMaxParallel()
         {
             testClass.FindIPParallel(testIP, testIPRangeArray, FullThreadCountOptions);
         }
 
         [Benchmark]
-        public void IPComparisonHalfParallel()
+        public void IPComparisonScalarHalfParallel()
         {
             testClass.FindIPParallel(testIP, testIPRangeArray, HalfThreadCountOptions);
         }
 
         [Benchmark]
-        public void IPComparisonTwoParallel()
+        public void IPComparisonScalarTwoParallel()
         {
             testClass.FindIPParallel(testIP, testIPRangeArray, TwoThreadCountOptions);
         }
 
         [Benchmark]
-        public void IPComparisonOneParallel()
+        public void IPComparisonScalarOneParallel()
         {
             testClass.FindIPParallel(testIP, testIPRangeArray, OneThreadCountOptions);
         }
 
         [Benchmark]
-        public void IPComparisonCoroutine()
+        public void IPComparisonScalarCoroutine()
         {
             foreach(ByteIP tempIP in testIPRangeList.Coroutine())
             {
@@ -118,33 +118,68 @@ namespace  cpuAssessment.Benchmark.Benchmarks
         }
 
         [Benchmark]
-        public void IPComparisonAVX2Serial()
+        public void IPComparisonVectorSerial()
         {
-            testClass.FindIPAVX2Serial(testIP, testIPRangeArray);
+            if (System.Runtime.Intrinsics.X86.Avx2.IsSupported)
+            {
+                testClass.FindIPAVX2Serial(testIP, testIPRangeArray);
+            }
+            else if (System.Runtime.Intrinsics.Arm.AdvSimd.IsSupported)
+            {
+                testClass.FindIPAdvSimdSerial(testIP, testIPRangeArray);
+            }
         }
 
         [Benchmark]
-        public void IPComparisonAVX2MaxParallel()
+        public void IPComparisonVectorMaxParallel()
         {
-            testClass.FindIPAVX2Parallel(testIP, testIPRangeArray, FullThreadCountOptions);
+            if (System.Runtime.Intrinsics.X86.Avx2.IsSupported)
+            {
+                testClass.FindIPAVX2Parallel(testIP, testIPRangeArray, FullThreadCountOptions);
+            }
+            else if (System.Runtime.Intrinsics.Arm.AdvSimd.IsSupported)
+            {
+                testClass.FindIPAdvSimdParallel(testIP, testIPRangeArray, FullThreadCountOptions);
+            }
         }
 
         [Benchmark]
-        public void IPComparisonAVX2HalfParallel()
+        public void IPComparisonVectorHalfParallel()
         {
-            testClass.FindIPAVX2Parallel(testIP, testIPRangeArray, HalfThreadCountOptions);
+            if (System.Runtime.Intrinsics.X86.Avx2.IsSupported)
+            {
+                testClass.FindIPAVX2Parallel(testIP, testIPRangeArray, HalfThreadCountOptions);
+            }
+            else if (System.Runtime.Intrinsics.Arm.AdvSimd.IsSupported)
+            {
+                testClass.FindIPAdvSimdParallel(testIP, testIPRangeArray, HalfThreadCountOptions);
+            }
         }
 
         [Benchmark]
-        public void IPComparisonAVX2TwoParallel()
+        public void IPComparisonVectorTwoParallel()
         {
-            testClass.FindIPAVX2Parallel(testIP, testIPRangeArray, TwoThreadCountOptions);
+            if (System.Runtime.Intrinsics.X86.Avx2.IsSupported)
+            {
+                testClass.FindIPAVX2Parallel(testIP, testIPRangeArray, TwoThreadCountOptions);
+            }
+            else if (System.Runtime.Intrinsics.Arm.AdvSimd.IsSupported)
+            {
+                testClass.FindIPAdvSimdParallel(testIP, testIPRangeArray, TwoThreadCountOptions);
+            }
         }
 
         [Benchmark]
-        public void IPComparisonAVX2OneParallel()
+        public void IPComparisonVectorOneParallel()
         {
-            testClass.FindIPAVX2Parallel(testIP, testIPRangeArray, OneThreadCountOptions);
+            if (System.Runtime.Intrinsics.X86.Avx2.IsSupported)
+            {
+                testClass.FindIPAVX2Parallel(testIP, testIPRangeArray, OneThreadCountOptions);
+            }
+            else if (System.Runtime.Intrinsics.Arm.AdvSimd.IsSupported)
+            {
+                testClass.FindIPAdvSimdParallel(testIP, testIPRangeArray, OneThreadCountOptions);
+            }
         }
  
     }

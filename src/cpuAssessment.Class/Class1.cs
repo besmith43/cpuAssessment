@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
+using System.Runtime.Intrinsics.Arm;
 
 namespace cpuAssessment.Class
 {
@@ -218,6 +219,131 @@ namespace cpuAssessment.Class
             else
             {
                 throw new Exception("AVX2 is not supported");
+            }
+
+            return containsFlag;
+        }
+
+        public unsafe bool FindIPAdvSimdSerial(ByteIP ipCandidate, ByteIP[] ipPool)
+        {
+            bool containsFlag = false;
+            int i = 0;
+
+            if (AdvSimd.IsSupported)
+            {
+                Vector128<byte> ipVector = Vector128.Create(
+                    ipCandidate.q1, ipCandidate.q2, ipCandidate.q3, ipCandidate.q4,
+                    ipCandidate.q1, ipCandidate.q2, ipCandidate.q3, ipCandidate.q4,
+                    ipCandidate.q1, ipCandidate.q2, ipCandidate.q3, ipCandidate.q4,
+                    ipCandidate.q1, ipCandidate.q2, ipCandidate.q3, ipCandidate.q4
+                );
+
+                for (i = 0; i + 3 < ipPool.Length; i = i + 4)
+                {
+                    Vector128<byte> comparables = Vector128.Create(
+                        ipPool[i].q1, ipPool[i].q2, ipPool[i].q3, ipPool[i].q4,
+                        ipPool[i+1].q1, ipPool[i+1].q2, ipPool[i+1].q3, ipPool[i+1].q4,
+                        ipPool[i+2].q1, ipPool[i+2].q2, ipPool[i+2].q3, ipPool[i+2].q4,
+                        ipPool[i+3].q1, ipPool[i+3].q2, ipPool[i+3].q3, ipPool[i+3].q4
+                    );
+
+                    Vector128<byte> mask = AdvSimd.CompareEqual(ipVector, comparables);
+
+                    bool tempFlag = CheckVector128(mask);
+                    if (tempFlag)
+                    {
+                        containsFlag = true;
+                    }
+                }
+
+                for (; i < ipPool.Length; i++)
+                {
+                    bool tempFlag = CompareIP(ipCandidate, ipPool[i]);
+                    if (tempFlag)
+                    {
+                        containsFlag = true;
+                    }
+                }
+            }
+            else
+            {
+                throw new Exception("AdvSimd is not supported");
+            }
+
+            return containsFlag;
+        }
+
+        public unsafe bool FindIPAdvSimdParallel(ByteIP ipCandidate, ByteIP[] ipPool, ParallelOptions numThreads)
+        {
+            bool containsFlag = false;
+            int numLoops = ipPool.Length/8;
+            int countRemaining = ipPool.Length%8;
+
+
+            if (AdvSimd.IsSupported)
+            {
+                Vector128<byte> ipVector = Vector128.Create(
+                    ipCandidate.q1, ipCandidate.q2, ipCandidate.q3, ipCandidate.q4,
+                    ipCandidate.q1, ipCandidate.q2, ipCandidate.q3, ipCandidate.q4,
+                    ipCandidate.q1, ipCandidate.q2, ipCandidate.q3, ipCandidate.q4,
+                    ipCandidate.q1, ipCandidate.q2, ipCandidate.q3, ipCandidate.q4
+                );
+
+                Parallel.For(0, numLoops-1, numThreads, (loopCount, state) =>{
+                    int i = loopCount * 4;
+
+                    Vector128<byte> comparables = Vector128.Create(
+                        ipPool[i].q1, ipPool[i].q2, ipPool[i].q3, ipPool[i].q4,
+                        ipPool[i+1].q1, ipPool[i+1].q2, ipPool[i+1].q3, ipPool[i+1].q4,
+                        ipPool[i+2].q1, ipPool[i+2].q2, ipPool[i+2].q3, ipPool[i+2].q4,
+                        ipPool[i+3].q1, ipPool[i+3].q2, ipPool[i+3].q3, ipPool[i+3].q4
+                    );
+
+                    Vector128<byte> mask = AdvSimd.CompareEqual(ipVector, comparables);
+
+                    bool tempFlag = CheckVector128(mask);
+                    if (tempFlag)
+                    {
+                        containsFlag = true;
+                    }
+                });
+
+                if (countRemaining > 0)
+                {
+                    for (int i = ipPool.Length - countRemaining; i < ipPool.Length; i++)
+                    {
+                        bool tempFlag = CompareIP(ipCandidate, ipPool[i]);
+                        if (tempFlag)
+                        {
+                            containsFlag = true;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                throw new Exception("AdvSimd is not supported");
+            }
+
+            return containsFlag;
+        }
+
+
+        public bool CheckVector128(Vector128<byte> mask)
+        {
+            bool containsFlag = false;
+
+            for(int i = 0; i < 16; i = i + 4)
+            {
+                bool q1Equal = Vector128.GetElement(mask, i) == 255;
+                bool q2Equal = Vector128.GetElement(mask, i+1) == 255;
+                bool q3Equal = Vector128.GetElement(mask, i+2) == 255;
+                bool q4Equal = Vector128.GetElement(mask, i+3) == 255;
+
+                if (q1Equal && q2Equal && q3Equal && q4Equal)
+                {
+                    containsFlag = true;
+                }
             }
 
             return containsFlag;

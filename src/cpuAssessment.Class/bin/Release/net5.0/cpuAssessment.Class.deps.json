@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v5.0": {
-      "cpuAssessment.Class/1.0.77": {
+      "cpuAssessment.Class/1.0.104": {
         "runtime": {
           "cpuAssessment.Class.dll": {}
         }
@@ -14,7 +14,7 @@
     }
   },
   "libraries": {
-    "cpuAssessment.Class/1.0.77": {
+    "cpuAssessment.Class/1.0.104": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

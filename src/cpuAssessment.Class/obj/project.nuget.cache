@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "gOhac72SLvVQyHspljLwNBwaOEzYfa8YnvE6kcYlettruU5SKEg6n3/z3GsAz7tMVUjivLmep/GodBoAvKPt3g==",
+  "dgSpecHash": "KO91GrSxmcEjAglmeKM6xQszt9ZlLrPDSCjJ8OxR7kDedGEYljnod8JmmFgftUrfIK6nuTNoMrwtTAk0nwjflg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\besmith\\Development\\cpuAssessment\\src\\cpuAssessment.Class\\cpuAssessment.Class.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\besmi\\Development\\cpuAssessment\\src\\cpuAssessment.Class\\cpuAssessment.Class.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\besmi\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

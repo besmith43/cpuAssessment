@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "1HlijScg9GJVUjkN9CdCGCo6eKrXcvfm4NmI7BmXzoN5idTPo/PEOT6/krzCgTTKjwrrIH1edGEBZTgb+5XgAw==",
+  "dgSpecHash": "Mq9TW+BcKVHWF4n43I69LN4Ys8r093+mPfYgMphERdvoq9WqlSzsLY5CPoN7VgHnKyg/T92urcZn9sBw9U1j3g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\besmith\\Development\\cpuAssessment\\src\\cpuAssessment\\cpuAssessment.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\besmi\\Development\\cpuAssessment\\src\\cpuAssessment\\cpuAssessment.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\besmi\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\besmi\\.nuget\\packages\\microsoft.netcore.app.host.win-arm64\\5.0.8\\microsoft.netcore.app.host.win-arm64.5.0.8.nupkg.sha512"
+  ],
   "logs": []
 }

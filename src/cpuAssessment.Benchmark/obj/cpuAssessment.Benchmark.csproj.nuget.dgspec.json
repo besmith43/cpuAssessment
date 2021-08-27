@@ -1,42 +1,36 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\besmith\\Development\\cpuAssessment\\src\\cpuAssessment.Benchmark\\cpuAssessment.Benchmark.csproj": {}
+    "C:\\Users\\besmi\\Development\\cpuAssessment\\src\\cpuAssessment.Benchmark\\cpuAssessment.Benchmark.csproj": {}
   },
   "projects": {
-    "C:\\Users\\besmith\\Development\\cpuAssessment\\src\\cpuAssessment.Benchmark\\cpuAssessment.Benchmark.csproj": {
-      "version": "1.0.77",
+    "C:\\Users\\besmi\\Development\\cpuAssessment\\src\\cpuAssessment.Benchmark\\cpuAssessment.Benchmark.csproj": {
+      "version": "1.0.104",
       "restore": {
-        "projectUniqueName": "C:\\Users\\besmith\\Development\\cpuAssessment\\src\\cpuAssessment.Benchmark\\cpuAssessment.Benchmark.csproj",
+        "projectUniqueName": "C:\\Users\\besmi\\Development\\cpuAssessment\\src\\cpuAssessment.Benchmark\\cpuAssessment.Benchmark.csproj",
         "projectName": "cpuAssessment.Benchmark",
-        "projectPath": "C:\\Users\\besmith\\Development\\cpuAssessment\\src\\cpuAssessment.Benchmark\\cpuAssessment.Benchmark.csproj",
-        "packagesPath": "C:\\Users\\besmith\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\besmith\\Development\\cpuAssessment\\src\\cpuAssessment.Benchmark\\obj\\",
+        "projectPath": "C:\\Users\\besmi\\Development\\cpuAssessment\\src\\cpuAssessment.Benchmark\\cpuAssessment.Benchmark.csproj",
+        "packagesPath": "C:\\Users\\besmi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\besmi\\Development\\cpuAssessment\\src\\cpuAssessment.Benchmark\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\besmith\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\besmi\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\besmith\\Development\\cpuAssessment\\src\\cpuAssessment.Class\\cpuAssessment.Class.csproj": {
-                "projectPath": "C:\\Users\\besmith\\Development\\cpuAssessment\\src\\cpuAssessment.Class\\cpuAssessment.Class.csproj"
+              "C:\\Users\\besmi\\Development\\cpuAssessment\\src\\cpuAssessment.Class\\cpuAssessment.Class.csproj": {
+                "projectPath": "C:\\Users\\besmi\\Development\\cpuAssessment\\src\\cpuAssessment.Class\\cpuAssessment.Class.csproj"
               }
             }
           }
@@ -66,6 +60,16 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Host.win-arm64",
+              "version": "[5.0.8, 5.0.8]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
@@ -75,31 +79,25 @@
         }
       }
     },
-    "C:\\Users\\besmith\\Development\\cpuAssessment\\src\\cpuAssessment.Class\\cpuAssessment.Class.csproj": {
-      "version": "1.0.77",
+    "C:\\Users\\besmi\\Development\\cpuAssessment\\src\\cpuAssessment.Class\\cpuAssessment.Class.csproj": {
+      "version": "1.0.104",
       "restore": {
-        "projectUniqueName": "C:\\Users\\besmith\\Development\\cpuAssessment\\src\\cpuAssessment.Class\\cpuAssessment.Class.csproj",
+        "projectUniqueName": "C:\\Users\\besmi\\Development\\cpuAssessment\\src\\cpuAssessment.Class\\cpuAssessment.Class.csproj",
         "projectName": "cpuAssessment.Class",
-        "projectPath": "C:\\Users\\besmith\\Development\\cpuAssessment\\src\\cpuAssessment.Class\\cpuAssessment.Class.csproj",
-        "packagesPath": "C:\\Users\\besmith\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\besmith\\Development\\cpuAssessment\\src\\cpuAssessment.Class\\obj\\",
+        "projectPath": "C:\\Users\\besmi\\Development\\cpuAssessment\\src\\cpuAssessment.Class\\cpuAssessment.Class.csproj",
+        "packagesPath": "C:\\Users\\besmi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\besmi\\Development\\cpuAssessment\\src\\cpuAssessment.Class\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\besmith\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\besmi\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -127,6 +125,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"

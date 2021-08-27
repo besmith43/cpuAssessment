@@ -6,12 +6,12 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v5.0": {
-      "cpuAssessment.Test/1.0.77": {
+      "cpuAssessment.Test/1.0.104": {
         "dependencies": {
           "Microsoft.NET.Test.Sdk": "16.7.1",
           "coverlet.collector": "1.3.0",
-          "cpuAssessment": "1.0.77",
-          "cpuAssessment.Class": "1.0.77",
+          "cpuAssessment": "1.0.104",
+          "cpuAssessment.Class": "1.0.104",
           "xunit": "2.4.1",
           "xunit.runner.visualstudio": "2.4.3"
         },
@@ -1089,15 +1089,15 @@
         }
       },
       "xunit.runner.visualstudio/2.4.3": {},
-      "cpuAssessment/1.0.77": {
+      "cpuAssessment/1.0.104": {
         "dependencies": {
-          "cpuAssessment.Class": "1.0.77"
+          "cpuAssessment.Class": "1.0.104"
         },
         "runtime": {
           "cpuAssessment.dll": {}
         }
       },
-      "cpuAssessment.Class/1.0.77": {
+      "cpuAssessment.Class/1.0.104": {
         "runtime": {
           "cpuAssessment.Class.dll": {}
         }
@@ -1105,7 +1105,7 @@
     }
   },
   "libraries": {
-    "cpuAssessment.Test/1.0.77": {
+    "cpuAssessment.Test/1.0.104": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -1747,12 +1747,12 @@
       "path": "xunit.runner.visualstudio/2.4.3",
       "hashPath": "xunit.runner.visualstudio.2.4.3.nupkg.sha512"
     },
-    "cpuAssessment/1.0.77": {
+    "cpuAssessment/1.0.104": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "cpuAssessment.Class/1.0.77": {
+    "cpuAssessment.Class/1.0.104": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
