@@ -1,5 +1,7 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
+using System.Diagnostics;
 using System.Threading.Tasks;
 using System.Runtime.Intrinsics;
 using cpuAssessment.cmd;
@@ -9,6 +11,19 @@ namespace cpuAssessment
 {
     class Program
     {
+        public static Class1 classLib = new Class1();
+        public static int numLoops = 100;
+        public static long[] ScalarSerialStopWatch = new long[numLoops];
+        public static long[] ScalarParallelAllStopWatch = new long[numLoops];
+        public static long[] ScalarParallelHalfStopWatch = new long[numLoops];
+        public static long[] ScalarParallel2StopWatch = new long[numLoops];
+        public static long[] ScalarParallel1StopWatch = new long[numLoops];
+        public static long[] ScalarCoRoutineStopWatch = new long[numLoops];
+        public static long[] VectorSerialStopWatch = new long[numLoops];
+        public static long[] VectorParallelAllStopWatch = new long[numLoops];
+        public static long[] VectorParallelHalfStopWatch = new long[numLoops];
+        public static long[] VectorParallel2StopWatch = new long[numLoops];
+        public static long[] VectorParallel1StopWatch = new long[numLoops];
         public static Options cmdFlags;
         static void Main(string[] args)
         {
@@ -33,179 +48,190 @@ namespace cpuAssessment
 
         public static void Run()
         {
+            ByteIP testIP = new ByteIP(149, 149, 140, 151);
+            
+            ByteIPRange testIPRangeList = new ByteIPRange{
+                q1Start = 149,
+                q1End = 150,
+                q2Start = 0,
+                q2End = 255,
+                q3Start = 0,
+                q3End = 255,
+                q4Start = 0,
+                q4End = 255
+            };
+
+            ByteIP[] testIPRangeArray = testIPRangeList.GenerateList();
+
+
             if (System.Runtime.Intrinsics.X86.Avx2.IsSupported)
             {
-                RunX86();
+                RunBase(testIP, testIPRangeList, testIPRangeArray);
+                RunX86(testIP, testIPRangeArray);
             }
             else if (System.Runtime.Intrinsics.Arm.AdvSimd.IsSupported)
             {
-                RunArm();
+                RunBase(testIP, testIPRangeList, testIPRangeArray);
+                RunArm(testIP, testIPRangeArray);
             }
             else
             {
-                RunBase();
+                RunBase(testIP, testIPRangeList, testIPRangeArray);
             }
         }
 
-        public static unsafe void RunBase()
+        public static unsafe void RunBase(ByteIP testIP, ByteIPRange testIPRangeList, ByteIP[] testIPRangeArray)
         {
-            Class1 classLib = new Class1();
+            Stopwatch Timer = new Stopwatch();
 
-            Int64 before_testIP = GC.GetTotalMemory(false);
-            ByteIP testIP = new ByteIP(149, 149, 140, 151);
-            Int64 after_testIP = GC.GetTotalMemory(false);
+            for (int i = 0; i < numLoops; i++)
+            {
+                Timer.Start();
+                bool foundSerial = classLib.FindIPSerial(testIP, testIPRangeArray);
+                Timer.Stop();
+                ScalarSerialStopWatch[i] = Timer.ElapsedMilliseconds;
+                Timer.Reset();
+            }
 
-            ByteIPRange testIPRangeList = new ByteIPRange{
-                q1Start = 149,
-                q1End = 150,
-                q2Start = 0,
-                q2End = 255,
-                q3Start = 0,
-                q3End = 255,
-                q4Start = 0,
-                q4End = 255
-            };
+            Console.WriteLine($"Scalar Serial Find IP function took and average of { ScalarSerialStopWatch.Sum()/numLoops } ms to complete");
 
-            Int64 before_Array = GC.GetTotalMemory(false);
-            ByteIP[] testIPRangeArray = testIPRangeList.GenerateList();
-            Int64 after_Array = GC.GetTotalMemory(false);
+            Timer.Reset();
 
-            bool found = classLib.FindIPParallel(testIP, testIPRangeArray, new ParallelOptions { MaxDegreeOfParallelism = Environment.ProcessorCount });
+            for (int i = 0; i < numLoops; i++)
+            {
+                Timer.Start();
+                bool foundAll = classLib.FindIPParallel(testIP, testIPRangeArray, new ParallelOptions { MaxDegreeOfParallelism = Environment.ProcessorCount });
+                Timer.Stop();
+                Timer.Reset();
+            }
 
-            Console.WriteLine($"the size of an instance of the byteIP class is { after_testIP - before_testIP }");
+            Console.WriteLine($"Scalar Parallel w/{ Environment.ProcessorCount } threads Find IP function took an average of { ScalarParallelAllStopWatch.Sum()/numLoops } ms to complete");
 
-            Console.WriteLine($"the size of the IP range array of ByteIP's is { after_Array - before_Array } bytes or { (after_Array - before_Array) /1024 /1024 } MB");
+            Timer.Reset();
 
-            Console.WriteLine($"Number of objects in ByteIP Array: { testIPRangeArray.Length }");
+            Timer.Start();
+            bool foundHalf = classLib.FindIPParallel(testIP, testIPRangeArray, new ParallelOptions { MaxDegreeOfParallelism = Environment.ProcessorCount/2 });
+            Timer.Stop();
 
-            Console.WriteLine($"That is { (after_Array - before_Array) / testIPRangeArray.Length } bytes per IP Address object");
+            Console.WriteLine($"Scalar Parallel w/{ Environment.ProcessorCount/2 } threads Find IP function took { Timer.Elapsed } to complete");
 
-            Console.WriteLine("Running the Coroutine version");
+            Timer.Reset();
 
-            bool foundCoroutine = false;
+            Timer.Start();
+            bool found2 = classLib.FindIPParallel(testIP, testIPRangeArray, new ParallelOptions { MaxDegreeOfParallelism = 2 });
+            Timer.Stop();
 
+            Console.WriteLine($"Scalar Parallel w/2 threads Find IP function took { Timer.Elapsed } to complete");
+
+            Timer.Reset();
+
+            Timer.Start();
+            bool found1 = classLib.FindIPParallel(testIP, testIPRangeArray, new ParallelOptions { MaxDegreeOfParallelism = 1 });
+            Timer.Stop();
+
+            Console.WriteLine($"Scalar Parallel w/1 thread Find IP function took { Timer.Elapsed } to complete");
+
+            Timer.Reset();
+
+        bool foundCoroutine = false;
+
+            Timer.Start();
             foreach(ByteIP tempIP in testIPRangeList.Coroutine())
             {
                 foundCoroutine = classLib.CompareIP(testIP, tempIP);
             }
+            Timer.Stop();
+
+            Console.WriteLine($"Scalar CoRoutine Find IP function took { Timer.Elapsed } to complete");
         }
 
-        public static unsafe void RunX86()
+        public static unsafe void RunX86(ByteIP testIP, ByteIP[] testIPRangeArray)
         {
-            Class1 classLib = new Class1();
+            Stopwatch Timer = new Stopwatch();
 
-            Console.WriteLine($"2 + 3 = { classLib.Add(2,3) }");
-            
-            classLib.RunAVX2();
+            Timer.Start();
+            bool foundAVX2 = classLib.FindIPAVX2Serial(testIP, testIPRangeArray);
+            Timer.Stop();
 
-            Int64 before_testIP = GC.GetTotalMemory(false);
-            ByteIP testIP = new ByteIP(149, 149, 140, 151);
-            Int64 after_testIP = GC.GetTotalMemory(false);
+            Console.WriteLine($"Vector Serial Find IP function took { Timer.Elapsed } to complete");
 
-            ByteIPRange testIPRangeList = new ByteIPRange{
-                q1Start = 149,
-                q1End = 150,
-                q2Start = 0,
-                q2End = 255,
-                q3Start = 0,
-                q3End = 255,
-                q4Start = 0,
-                q4End = 255
-            };
+            Timer.Reset();
 
-            Int64 before_Array = GC.GetTotalMemory(false);
-            ByteIP[] testIPRangeArray = testIPRangeList.GenerateList();
-            Int64 after_Array = GC.GetTotalMemory(false);
+            Timer.Start();
+            bool foundAVX2ParallelAll = classLib.FindIPAVX2Parallel(testIP, testIPRangeArray, new ParallelOptions { MaxDegreeOfParallelism = Environment.ProcessorCount });
+            Timer.Stop();
 
-            bool found = classLib.FindIPParallel(testIP, testIPRangeArray, new ParallelOptions { MaxDegreeOfParallelism = Environment.ProcessorCount });
+            Console.WriteLine($"Vector Parallel w/{ Environment.ProcessorCount } threads Find IP function took { Timer.Elapsed } to complete");
 
-            Console.WriteLine($"the size of an instance of the byteIP class is { after_testIP - before_testIP }");
+            Timer.Reset();
 
-            Console.WriteLine($"the size of the IP range array of ByteIP's is { after_Array - before_Array } bytes or { (after_Array - before_Array) /1024 /1024 } MB");
+            Timer.Start();
+            bool foundAVX2ParallelHalf = classLib.FindIPAVX2Parallel(testIP, testIPRangeArray, new ParallelOptions { MaxDegreeOfParallelism = Environment.ProcessorCount/2 });
+            Timer.Stop();
 
-            Console.WriteLine($"Number of objects in ByteIP Array: { testIPRangeArray.Length }");
+            Console.WriteLine($"Vector Parallel w/{ Environment.ProcessorCount/2 } threads Find IP function took { Timer.Elapsed } to complete");
 
-            Console.WriteLine($"That is { (after_Array - before_Array) / testIPRangeArray.Length } bytes per IP Address object");
+            Timer.Reset();
 
-            Console.WriteLine("Running the Coroutine version");
+            Timer.Start();
+            bool foundAVX2Parallel2 = classLib.FindIPAVX2Parallel(testIP, testIPRangeArray, new ParallelOptions { MaxDegreeOfParallelism = 2 });
+            Timer.Stop();
 
-            bool foundCoroutine = false;
+            Console.WriteLine($"Vector Parallel w/2 threads Find IP function took { Timer.Elapsed } to complete");
 
-            foreach(ByteIP tempIP in testIPRangeList.Coroutine())
-            {
-                foundCoroutine = classLib.CompareIP(testIP, tempIP);
-            }
+            Timer.Reset();
 
-            ByteIPRange testAVX2RangeList = new ByteIPRange{
-                q1Start = 149,
-                q1End = 149,
-                q2Start = 149,
-                q2End = 149,
-                q3Start = 140,
-                q3End = 140,
-                q4Start = 150,
-                q4End = 157
-            };
+            Timer.Start();
+            bool foundAVX2Parallel1 = classLib.FindIPAVX2Parallel(testIP, testIPRangeArray, new ParallelOptions { MaxDegreeOfParallelism = 1 });
+            Timer.Stop();
 
-            bool foundAVX2 = classLib.FindIPAVX2Serial(testIP, testAVX2RangeList.GenerateList());
-            bool foundAVX22 = classLib.FindIPAVX2Serial(testIP, testIPRangeArray);
+            Console.WriteLine($"Vector Parallel w/1 thread Find IP function took { Timer.Elapsed } to complete");
 
-            Console.WriteLine($"Answer from the small avx2 run: { foundAVX2 }");
-            Console.WriteLine($"Answer from the long run: { foundAVX22 }");
-
-            bool foundAVX2Parallel = classLib.FindIPAVX2Parallel(testIP, testIPRangeArray, new ParallelOptions { MaxDegreeOfParallelism = Environment.ProcessorCount });
-
-            Console.WriteLine($"Answer from AVX2 Parallel: { foundAVX2Parallel }");
         }
 
-        public static unsafe void RunArm()
+        public static unsafe void RunArm(ByteIP testIP, ByteIP[] testIPRangeArray)
         {
-            Class1 classLib = new Class1();
+            Stopwatch Timer = new Stopwatch();
 
-            Int64 before_testIP = GC.GetTotalMemory(false);
-            ByteIP testIP = new ByteIP(149, 149, 140, 151);
-            Int64 after_testIP = GC.GetTotalMemory(false);
-
-            ByteIPRange testIPRangeList = new ByteIPRange{
-                q1Start = 149,
-                q1End = 150,
-                q2Start = 0,
-                q2End = 255,
-                q3Start = 0,
-                q3End = 255,
-                q4Start = 0,
-                q4End = 255
-            };
-
-            Int64 before_Array = GC.GetTotalMemory(false);
-            ByteIP[] testIPRangeArray = testIPRangeList.GenerateList();
-            Int64 after_Array = GC.GetTotalMemory(false);
-
-            bool found = classLib.FindIPParallel(testIP, testIPRangeArray, new ParallelOptions { MaxDegreeOfParallelism = Environment.ProcessorCount });
-
-            Console.WriteLine($"the size of an instance of the byteIP class is { after_testIP - before_testIP }");
-
-            Console.WriteLine($"the size of the IP range array of ByteIP's is { after_Array - before_Array } bytes or { (after_Array - before_Array) /1024 /1024 } MB");
-
-            Console.WriteLine($"Number of objects in ByteIP Array: { testIPRangeArray.Length }");
-
-            Console.WriteLine($"That is { (after_Array - before_Array) / testIPRangeArray.Length } bytes per IP Address object");
-
-            Console.WriteLine("Running the Coroutine version");
-
-            bool foundCoroutine = false;
-
-            foreach(ByteIP tempIP in testIPRangeList.Coroutine())
-            {
-                foundCoroutine = classLib.CompareIP(testIP, tempIP);
-            }
-
+            Timer.Start();
             bool foundAdvSimdSerial = classLib.FindIPAdvSimdSerial(testIP, testIPRangeArray);
+            Timer.Stop();
 
-            bool foundAdvSimdParallel = classLib.FindIPAdvSimdParallel(testIP, testIPRangeArray, new ParallelOptions{ MaxDegreeOfParallelism = Environment.ProcessorCount });
+            Console.WriteLine($"Vector Serial Find IP function took { Timer.Elapsed } to complete");
 
-            Console.WriteLine($"Answer from the AdvSimd Serial: { foundAdvSimdSerial }");
-            Console.WriteLine($"Answer from the AdvSimd Parallel: { foundAdvSimdParallel }");
+            Timer.Reset();
+
+            Timer.Start();
+            bool foundAdvSimdParallelAll = classLib.FindIPAdvSimdParallel(testIP, testIPRangeArray, new ParallelOptions{ MaxDegreeOfParallelism = Environment.ProcessorCount });
+            Timer.Stop();
+
+            Console.WriteLine($"Vector Parallel w/{ Environment.ProcessorCount } threads Find IP function took { Timer.Elapsed } to complete");
+
+
+            Timer.Reset();
+
+            Timer.Start();
+            bool foundAdvSimdParallelHalf = classLib.FindIPAdvSimdParallel(testIP, testIPRangeArray, new ParallelOptions{ MaxDegreeOfParallelism = Environment.ProcessorCount/2 });
+            Timer.Stop();
+
+            Console.WriteLine($"Vector Parallel w/{ Environment.ProcessorCount/2 } threads Find IP function took { Timer.Elapsed } to complete");
+
+            Timer.Reset();
+
+            Timer.Start();
+            bool foundAdvSimdParallel2 = classLib.FindIPAdvSimdParallel(testIP, testIPRangeArray, new ParallelOptions{ MaxDegreeOfParallelism = 2 });
+            Timer.Stop();
+
+            Console.WriteLine($"Vector Parallel w/2 threads Find IP function took { Timer.Elapsed } to complete");
+
+            Timer.Reset();
+
+            Timer.Start();
+            bool foundAdvSimdParallel1 = classLib.FindIPAdvSimdParallel(testIP, testIPRangeArray, new ParallelOptions{ MaxDegreeOfParallelism = 1 });
+            Timer.Stop();
+
+            Console.WriteLine($"Vector Parallel w/1 thread Find IP function took { Timer.Elapsed } to complete");
+
         }
     }
 }
