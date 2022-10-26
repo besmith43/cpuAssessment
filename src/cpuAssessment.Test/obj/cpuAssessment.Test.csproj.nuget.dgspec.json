@@ -1,39 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\besmith\\Development\\cpuAssessment\\src\\cpuAssessment.Test\\cpuAssessment.Test.csproj": {}
+    "C:\\Users\\besmi\\dev\\cpuAssessment\\src\\cpuAssessment.Test\\cpuAssessment.Test.csproj": {}
   },
   "projects": {
-    "C:\\Users\\besmith\\Development\\cpuAssessment\\src\\cpuAssessment.Class\\cpuAssessment.Class.csproj": {
-      "version": "1.0.114",
+    "C:\\Users\\besmi\\dev\\cpuAssessment\\src\\cpuAssessment.Class\\cpuAssessment.Class.csproj": {
+      "version": "1.0.117",
       "restore": {
-        "projectUniqueName": "C:\\Users\\besmith\\Development\\cpuAssessment\\src\\cpuAssessment.Class\\cpuAssessment.Class.csproj",
+        "projectUniqueName": "C:\\Users\\besmi\\dev\\cpuAssessment\\src\\cpuAssessment.Class\\cpuAssessment.Class.csproj",
         "projectName": "cpuAssessment.Class",
-        "projectPath": "C:\\Users\\besmith\\Development\\cpuAssessment\\src\\cpuAssessment.Class\\cpuAssessment.Class.csproj",
-        "packagesPath": "C:\\Users\\besmith\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\besmith\\Development\\cpuAssessment\\src\\cpuAssessment.Class\\obj\\",
+        "projectPath": "C:\\Users\\besmi\\dev\\cpuAssessment\\src\\cpuAssessment.Class\\cpuAssessment.Class.csproj",
+        "packagesPath": "C:\\Users\\besmi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\besmi\\dev\\cpuAssessment\\src\\cpuAssessment.Class\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\besmith\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\besmi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net5.0"
+          "net7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net5.0": {
-            "targetAlias": "net5.0",
+          "net7.0": {
+            "targetAlias": "net7.0",
             "projectReferences": {}
           }
         },
@@ -44,15 +37,16 @@
         }
       },
       "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
+        "net7.0": {
+          "targetAlias": "net7.0",
           "imports": [
             "net461",
             "net462",
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -61,46 +55,39 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-preview.7.21379.14\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100-rc.2.22477.23\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\besmith\\Development\\cpuAssessment\\src\\cpuAssessment.Test\\cpuAssessment.Test.csproj": {
-      "version": "1.0.114",
+    "C:\\Users\\besmi\\dev\\cpuAssessment\\src\\cpuAssessment.Test\\cpuAssessment.Test.csproj": {
+      "version": "1.0.117",
       "restore": {
-        "projectUniqueName": "C:\\Users\\besmith\\Development\\cpuAssessment\\src\\cpuAssessment.Test\\cpuAssessment.Test.csproj",
+        "projectUniqueName": "C:\\Users\\besmi\\dev\\cpuAssessment\\src\\cpuAssessment.Test\\cpuAssessment.Test.csproj",
         "projectName": "cpuAssessment.Test",
-        "projectPath": "C:\\Users\\besmith\\Development\\cpuAssessment\\src\\cpuAssessment.Test\\cpuAssessment.Test.csproj",
-        "packagesPath": "C:\\Users\\besmith\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\besmith\\Development\\cpuAssessment\\src\\cpuAssessment.Test\\obj\\",
+        "projectPath": "C:\\Users\\besmi\\dev\\cpuAssessment\\src\\cpuAssessment.Test\\cpuAssessment.Test.csproj",
+        "packagesPath": "C:\\Users\\besmi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\besmi\\dev\\cpuAssessment\\src\\cpuAssessment.Test\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\besmith\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\besmi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net5.0"
+          "net7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net5.0": {
-            "targetAlias": "net5.0",
+          "net7.0": {
+            "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\besmith\\Development\\cpuAssessment\\src\\cpuAssessment.Class\\cpuAssessment.Class.csproj": {
-                "projectPath": "C:\\Users\\besmith\\Development\\cpuAssessment\\src\\cpuAssessment.Class\\cpuAssessment.Class.csproj"
+              "C:\\Users\\besmi\\dev\\cpuAssessment\\src\\cpuAssessment.Class\\cpuAssessment.Class.csproj": {
+                "projectPath": "C:\\Users\\besmi\\dev\\cpuAssessment\\src\\cpuAssessment.Class\\cpuAssessment.Class.csproj"
               },
-              "C:\\Users\\besmith\\Development\\cpuAssessment\\src\\cpuAssessment\\cpuAssessment.csproj": {
-                "projectPath": "C:\\Users\\besmith\\Development\\cpuAssessment\\src\\cpuAssessment\\cpuAssessment.csproj"
+              "C:\\Users\\besmi\\dev\\cpuAssessment\\src\\cpuAssessment\\cpuAssessment.csproj": {
+                "projectPath": "C:\\Users\\besmi\\dev\\cpuAssessment\\src\\cpuAssessment\\cpuAssessment.csproj"
               }
             }
           }
@@ -112,8 +99,8 @@
         }
       },
       "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
+        "net7.0": {
+          "targetAlias": "net7.0",
           "dependencies": {
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
@@ -142,7 +129,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -151,43 +139,36 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-preview.7.21379.14\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100-rc.2.22477.23\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\besmith\\Development\\cpuAssessment\\src\\cpuAssessment\\cpuAssessment.csproj": {
-      "version": "1.0.114",
+    "C:\\Users\\besmi\\dev\\cpuAssessment\\src\\cpuAssessment\\cpuAssessment.csproj": {
+      "version": "1.0.117",
       "restore": {
-        "projectUniqueName": "C:\\Users\\besmith\\Development\\cpuAssessment\\src\\cpuAssessment\\cpuAssessment.csproj",
+        "projectUniqueName": "C:\\Users\\besmi\\dev\\cpuAssessment\\src\\cpuAssessment\\cpuAssessment.csproj",
         "projectName": "cpuAssessment",
-        "projectPath": "C:\\Users\\besmith\\Development\\cpuAssessment\\src\\cpuAssessment\\cpuAssessment.csproj",
-        "packagesPath": "C:\\Users\\besmith\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\besmith\\Development\\cpuAssessment\\src\\cpuAssessment\\obj\\",
+        "projectPath": "C:\\Users\\besmi\\dev\\cpuAssessment\\src\\cpuAssessment\\cpuAssessment.csproj",
+        "packagesPath": "C:\\Users\\besmi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\besmi\\dev\\cpuAssessment\\src\\cpuAssessment\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\besmith\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\besmi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net5.0"
+          "net7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net5.0": {
-            "targetAlias": "net5.0",
+          "net7.0": {
+            "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\besmith\\Development\\cpuAssessment\\src\\cpuAssessment.Class\\cpuAssessment.Class.csproj": {
-                "projectPath": "C:\\Users\\besmith\\Development\\cpuAssessment\\src\\cpuAssessment.Class\\cpuAssessment.Class.csproj"
+              "C:\\Users\\besmi\\dev\\cpuAssessment\\src\\cpuAssessment.Class\\cpuAssessment.Class.csproj": {
+                "projectPath": "C:\\Users\\besmi\\dev\\cpuAssessment\\src\\cpuAssessment.Class\\cpuAssessment.Class.csproj"
               }
             }
           }
@@ -199,15 +180,16 @@
         }
       },
       "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
+        "net7.0": {
+          "targetAlias": "net7.0",
           "imports": [
             "net461",
             "net462",
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -216,7 +198,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-preview.7.21379.14\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100-rc.2.22477.23\\RuntimeIdentifierGraph.json"
         }
       }
     }
