@@ -1,0 +1,12 @@
+C:\Users\besmi\dev\cpuAssessment\src\cpuAssessment.Class\bin\Release\net7.0\cpuAssessment.Class.deps.json
+C:\Users\besmi\dev\cpuAssessment\src\cpuAssessment.Class\bin\Release\net7.0\cpuAssessment.Class.dll
+C:\Users\besmi\dev\cpuAssessment\src\cpuAssessment.Class\bin\Release\net7.0\cpuAssessment.Class.pdb
+C:\Users\besmi\dev\cpuAssessment\src\cpuAssessment.Class\obj\Release\net7.0\cpuAssessment.Class.csproj.AssemblyReference.cache
+C:\Users\besmi\dev\cpuAssessment\src\cpuAssessment.Class\obj\Release\net7.0\cpuAssessment.Class.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\besmi\dev\cpuAssessment\src\cpuAssessment.Class\obj\Release\net7.0\cpuAssessment.Class.AssemblyInfoInputs.cache
+C:\Users\besmi\dev\cpuAssessment\src\cpuAssessment.Class\obj\Release\net7.0\cpuAssessment.Class.AssemblyInfo.cs
+C:\Users\besmi\dev\cpuAssessment\src\cpuAssessment.Class\obj\Release\net7.0\cpuAssessment.Class.csproj.CoreCompileInputs.cache
+C:\Users\besmi\dev\cpuAssessment\src\cpuAssessment.Class\obj\Release\net7.0\cpuAssessment.Class.dll
+C:\Users\besmi\dev\cpuAssessment\src\cpuAssessment.Class\obj\Release\net7.0\refint\cpuAssessment.Class.dll
+C:\Users\besmi\dev\cpuAssessment\src\cpuAssessment.Class\obj\Release\net7.0\cpuAssessment.Class.pdb
+C:\Users\besmi\dev\cpuAssessment\src\cpuAssessment.Class\obj\Release\net7.0\ref\cpuAssessment.Class.dll

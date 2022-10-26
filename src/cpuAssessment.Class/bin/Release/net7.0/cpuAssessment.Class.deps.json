@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "cpuAssessment.Class/1.0.117": {
+        "runtime": {
+          "cpuAssessment.Class.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "cpuAssessment.Class/1.0.117": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
