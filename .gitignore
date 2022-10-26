@@ -1,0 +1,6 @@
+**/output/
+**/bin/
+**/obj/
+src/*/bin/
+src/*/obj/
+output/
