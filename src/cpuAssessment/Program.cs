@@ -25,6 +25,7 @@ namespace cpuAssessment
         public static long[] VectorParallel2StopWatch = new long[numLoops];
         public static long[] VectorParallel1StopWatch = new long[numLoops];
         public static Options cmdFlags;
+        
         static void Main(string[] args)
         {
             cmdParser cmdP = new(args);

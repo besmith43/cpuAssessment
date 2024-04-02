@@ -2,7 +2,7 @@
 <html lang='en'>
 <head>
 <meta charset='utf-8' />
-<title>cpuAssessment.Benchmark.Benchmarks.ClassBenchmarks-20210826-213904</title>
+<title>cpuAssessment.Benchmark.Benchmarks.ClassBenchmarks-20240330-204229</title>
 
 <style type="text/css">
 	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
@@ -13,17 +13,29 @@
 </head>
 <body>
 <pre><code>
-BenchmarkDotNet=v0.13.0, OS=Windows 10.0.22000
-Microsoft SQ2 3.15 GHz, 1 CPU, 8 logical and 8 physical cores
-.NET SDK=6.0.100-preview.7.21379.14
-  [Host] : .NET 5.0.9 (5.0.921.35908), Arm64 RyuJIT
+BenchmarkDotNet=v0.13.0, OS=macOS 14.4.1 (23E224) [Darwin 23.4.0]
+Apple M1 Max, 1 CPU, 10 logical and 10 physical cores
+.NET SDK=8.0.101
+  [Host]     : .NET 8.0.1 (8.0.123.58001), Arm64 RyuJIT
+  DefaultJob : .NET 8.0.1 (8.0.123.58001), Arm64 RyuJIT
 </code></pre>
 <pre><code></code></pre>
 
 <table>
-<thead><tr><th>            Method</th><th>Mean</th><th>Error</th><th>Ratio</th><th>RatioSD</th><th>Rank</th>
+<thead><tr><th>                  Method</th><th>Mean</th><th>Error</th><th>StdDev</th><th>Ratio</th><th>RatioSD</th><th>Rank</th><th>Gen 0</th><th>Gen 1</th><th>Gen 2</th><th>Allocated</th>
 </tr>
-</thead><tbody><tr><td>IPComparisonScalarSerial</td><td>NA</td><td>NA</td><td>?</td><td>?</td><td>?</td>
+</thead><tbody><tr><td>IPComparisonScalarSerial</td><td>41.28 ms</td><td>0.355 ms</td><td>0.332 ms</td><td>1.00</td><td>0.00</td><td>6</td><td>-</td><td>-</td><td>-</td><td>52 B</td>
+</tr><tr><td>IPComparisonScalarMaxParallel</td><td>30.57 ms</td><td>0.608 ms</td><td>0.791 ms</td><td>0.74</td><td>0.02</td><td>3</td><td>-</td><td>-</td><td>-</td><td>3,862 B</td>
+</tr><tr><td>IPComparisonScalarHalfParallel</td><td>39.13 ms</td><td>1.075 ms</td><td>3.171 ms</td><td>0.91</td><td>0.07</td><td>5</td><td>-</td><td>-</td><td>-</td><td>2,766 B</td>
+</tr><tr><td>IPComparisonScalarTwoParallel</td><td>59.83 ms</td><td>1.194 ms</td><td>1.674 ms</td><td>1.45</td><td>0.06</td><td>7</td><td>-</td><td>-</td><td>-</td><td>2,113 B</td>
+</tr><tr><td>IPComparisonScalarOneParallel</td><td>114.52 ms</td><td>1.000 ms</td><td>1.265 ms</td><td>2.77</td><td>0.03</td><td>10</td><td>-</td><td>-</td><td>-</td><td>1,984 B</td>
+</tr><tr><td>IPComparisonScalarCoroutine</td><td>325.90 ms</td><td>1.379 ms</td><td>1.076 ms</td><td>7.88</td><td>0.05</td><td>11</td><td>128000.0000</td><td>-</td><td>-</td><td>805,307,096 B</td>
+</tr><tr><td>IPComparisonVectorSerial</td><td>104.04 ms</td><td>0.269 ms</td><td>0.252 ms</td><td>2.52</td><td>0.02</td><td>9</td><td>-</td><td>-</td><td>-</td><td>134 B</td>
+</tr><tr><td>IPComparisonVectorMaxParallel</td><td>12.17 ms</td><td>0.204 ms</td><td>0.181 ms</td><td>0.29</td><td>0.00</td><td>1</td><td>-</td><td>-</td><td>-</td><td>4,186 B</td>
+</tr><tr><td>IPComparisonVectorHalfParallel</td><td>17.04 ms</td><td>0.325 ms</td><td>0.304 ms</td><td>0.41</td><td>0.01</td><td>2</td><td>-</td><td>-</td><td>-</td><td>2,840 B</td>
+</tr><tr><td>IPComparisonVectorTwoParallel</td><td>37.48 ms</td><td>0.189 ms</td><td>0.168 ms</td><td>0.91</td><td>0.01</td><td>4</td><td>-</td><td>-</td><td>-</td><td>2,102 B</td>
+</tr><tr><td>IPComparisonVectorOneParallel</td><td>72.36 ms</td><td>0.283 ms</td><td>0.265 ms</td><td>1.75</td><td>0.01</td><td>8</td><td>-</td><td>-</td><td>-</td><td>1,912 B</td>
+</tr><tr><td>IPComparisonAsync</td><td>41.69 ms</td><td>0.827 ms</td><td>1.238 ms</td><td>1.00</td><td>0.04</td><td>6</td><td>-</td><td>-</td><td>-</td><td>268,437,024 B</td>
 </tr></tbody></table>
 </body>
 </html>

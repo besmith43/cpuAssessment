@@ -1,0 +1,1470 @@
+// Validating benchmarks:
+// ***** BenchmarkRunner: Start   *****
+// ***** Found 12 benchmark(s) in total *****
+// ***** Building 1 exe(s) in Parallel: Start   *****
+Unable to find .sln or .csproj file. Will use current directory /Users/besmith/Developer/Personal/cpuAssessment to search for project file. If you don't use .sln file on purpose it should not be a problem.
+// start dotnet restore  /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true in /Users/besmith/Developer/Personal/cpuAssessment/src/cpuAssessment.Benchmark/bin/Release/net8.0/cc033887-c31c-40ae-b6c4-03c62b8dc19b
+// command took 0.79s and exited with 0
+// start dotnet build -c Release  --no-restore /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true in /Users/besmith/Developer/Personal/cpuAssessment/src/cpuAssessment.Benchmark/bin/Release/net8.0/cc033887-c31c-40ae-b6c4-03c62b8dc19b
+// command took 1.66s and exited with 0
+// ***** Done, took 00:00:02 (2.49 sec)   *****
+// Found 12 benchmarks:
+//   ClassBenchmarks.IPComparisonScalarSerial: DefaultJob
+//   ClassBenchmarks.IPComparisonScalarMaxParallel: DefaultJob
+//   ClassBenchmarks.IPComparisonScalarHalfParallel: DefaultJob
+//   ClassBenchmarks.IPComparisonScalarTwoParallel: DefaultJob
+//   ClassBenchmarks.IPComparisonScalarOneParallel: DefaultJob
+//   ClassBenchmarks.IPComparisonScalarCoroutine: DefaultJob
+//   ClassBenchmarks.IPComparisonVectorSerial: DefaultJob
+//   ClassBenchmarks.IPComparisonVectorMaxParallel: DefaultJob
+//   ClassBenchmarks.IPComparisonVectorHalfParallel: DefaultJob
+//   ClassBenchmarks.IPComparisonVectorTwoParallel: DefaultJob
+//   ClassBenchmarks.IPComparisonVectorOneParallel: DefaultJob
+//   ClassBenchmarks.IPComparisonAsync: DefaultJob
+
+// **************************
+// Benchmark: ClassBenchmarks.IPComparisonScalarSerial: DefaultJob
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "cc033887-c31c-40ae-b6c4-03c62b8dc19b.dll" --benchmarkName "cpuAssessment.Benchmark.Benchmarks.ClassBenchmarks.IPComparisonScalarSerial" --job "Default" --benchmarkId 0 in /Users/besmith/Developer/Personal/cpuAssessment/src/cpuAssessment.Benchmark/bin/Release/net8.0/cc033887-c31c-40ae-b6c4-03c62b8dc19b/bin/Release/net8.0
+Failed to set up high priority. Make sure you have the right permissions. Message: Permission denied
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 8.0.1 (8.0.123.58001), Arm64 RyuJIT
+// GC=Concurrent Workstation
+// Job: DefaultJob
+
+OverheadJitting  1: 1 op, 104125.00 ns, 104.1250 us/op
+WorkloadJitting  1: 1 op, 43153208.00 ns, 43.1532 ms/op
+
+WorkloadPilot    1: 2 op, 83901209.00 ns, 41.9506 ms/op
+WorkloadPilot    2: 3 op, 124972042.00 ns, 41.6573 ms/op
+WorkloadPilot    3: 4 op, 168504208.00 ns, 42.1261 ms/op
+WorkloadPilot    4: 5 op, 209174166.00 ns, 41.8348 ms/op
+WorkloadPilot    5: 6 op, 251298708.00 ns, 41.8831 ms/op
+WorkloadPilot    6: 7 op, 288494250.00 ns, 41.2135 ms/op
+WorkloadPilot    7: 8 op, 328782083.00 ns, 41.0978 ms/op
+WorkloadPilot    8: 9 op, 376187708.00 ns, 41.7986 ms/op
+WorkloadPilot    9: 10 op, 416412000.00 ns, 41.6412 ms/op
+WorkloadPilot   10: 11 op, 454005417.00 ns, 41.2732 ms/op
+WorkloadPilot   11: 12 op, 488834375.00 ns, 40.7362 ms/op
+WorkloadPilot   12: 13 op, 537885709.00 ns, 41.3758 ms/op
+
+WorkloadWarmup   1: 13 op, 515505375.00 ns, 39.6543 ms/op
+WorkloadWarmup   2: 13 op, 522822583.00 ns, 40.2171 ms/op
+WorkloadWarmup   3: 13 op, 531164541.00 ns, 40.8588 ms/op
+WorkloadWarmup   4: 13 op, 543385917.00 ns, 41.7989 ms/op
+WorkloadWarmup   5: 13 op, 539095459.00 ns, 41.4689 ms/op
+WorkloadWarmup   6: 13 op, 536684834.00 ns, 41.2834 ms/op
+WorkloadWarmup   7: 13 op, 536590917.00 ns, 41.2762 ms/op
+WorkloadWarmup   8: 13 op, 542035667.00 ns, 41.6951 ms/op
+WorkloadWarmup   9: 13 op, 534032667.00 ns, 41.0794 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 13 op, 530840625.00 ns, 40.8339 ms/op
+WorkloadActual   2: 13 op, 540543916.00 ns, 41.5803 ms/op
+WorkloadActual   3: 13 op, 539885125.00 ns, 41.5296 ms/op
+WorkloadActual   4: 13 op, 537779542.00 ns, 41.3677 ms/op
+WorkloadActual   5: 13 op, 538459750.00 ns, 41.4200 ms/op
+WorkloadActual   6: 13 op, 539210709.00 ns, 41.4777 ms/op
+WorkloadActual   7: 13 op, 538564916.00 ns, 41.4281 ms/op
+WorkloadActual   8: 13 op, 531758542.00 ns, 40.9045 ms/op
+WorkloadActual   9: 13 op, 544714209.00 ns, 41.9011 ms/op
+WorkloadActual  10: 13 op, 539381750.00 ns, 41.4909 ms/op
+WorkloadActual  11: 13 op, 535981667.00 ns, 41.2294 ms/op
+WorkloadActual  12: 13 op, 537422375.00 ns, 41.3402 ms/op
+WorkloadActual  13: 13 op, 530687625.00 ns, 40.8221 ms/op
+WorkloadActual  14: 13 op, 534063375.00 ns, 41.0818 ms/op
+WorkloadActual  15: 13 op, 529761125.00 ns, 40.7509 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 13 op, 530840625.00 ns, 40.8339 ms/op
+WorkloadResult   2: 13 op, 540543916.00 ns, 41.5803 ms/op
+WorkloadResult   3: 13 op, 539885125.00 ns, 41.5296 ms/op
+WorkloadResult   4: 13 op, 537779542.00 ns, 41.3677 ms/op
+WorkloadResult   5: 13 op, 538459750.00 ns, 41.4200 ms/op
+WorkloadResult   6: 13 op, 539210709.00 ns, 41.4777 ms/op
+WorkloadResult   7: 13 op, 538564916.00 ns, 41.4281 ms/op
+WorkloadResult   8: 13 op, 531758542.00 ns, 40.9045 ms/op
+WorkloadResult   9: 13 op, 544714209.00 ns, 41.9011 ms/op
+WorkloadResult  10: 13 op, 539381750.00 ns, 41.4909 ms/op
+WorkloadResult  11: 13 op, 535981667.00 ns, 41.2294 ms/op
+WorkloadResult  12: 13 op, 537422375.00 ns, 41.3402 ms/op
+WorkloadResult  13: 13 op, 530687625.00 ns, 40.8221 ms/op
+WorkloadResult  14: 13 op, 534063375.00 ns, 41.0818 ms/op
+WorkloadResult  15: 13 op, 529761125.00 ns, 40.7509 ms/op
+GC:  0 0 0 672 13
+Threading:  0 0 13
+
+// AfterAll
+// Benchmark Process 74353 has exited with code 0
+
+Mean = 41.277 ms, StdErr = 0.086 ms (0.21%), N = 15, StdDev = 0.332 ms
+Min = 40.751 ms, Q1 = 40.993 ms, Median = 41.368 ms, Q3 = 41.484 ms, Max = 41.901 ms
+IQR = 0.491 ms, LowerFence = 40.256 ms, UpperFence = 42.221 ms
+ConfidenceInterval = [40.922 ms; 41.632 ms] (CI 99.9%), Margin = 0.355 ms (0.86% of Mean)
+Skewness = -0.14, Kurtosis = 1.9, MValue = 2
+
+// **************************
+// Benchmark: ClassBenchmarks.IPComparisonScalarMaxParallel: DefaultJob
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "cc033887-c31c-40ae-b6c4-03c62b8dc19b.dll" --benchmarkName "cpuAssessment.Benchmark.Benchmarks.ClassBenchmarks.IPComparisonScalarMaxParallel" --job "Default" --benchmarkId 1 in /Users/besmith/Developer/Personal/cpuAssessment/src/cpuAssessment.Benchmark/bin/Release/net8.0/cc033887-c31c-40ae-b6c4-03c62b8dc19b/bin/Release/net8.0
+Failed to set up high priority. Make sure you have the right permissions. Message: Permission denied
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 8.0.1 (8.0.123.58001), Arm64 RyuJIT
+// GC=Concurrent Workstation
+// Job: DefaultJob
+
+OverheadJitting  1: 1 op, 108125.00 ns, 108.1250 us/op
+WorkloadJitting  1: 1 op, 73031625.00 ns, 73.0316 ms/op
+
+WorkloadPilot    1: 2 op, 287951208.00 ns, 143.9756 ms/op
+WorkloadPilot    2: 3 op, 100967666.00 ns, 33.6559 ms/op
+WorkloadPilot    3: 4 op, 140096458.00 ns, 35.0241 ms/op
+WorkloadPilot    4: 5 op, 175230083.00 ns, 35.0460 ms/op
+WorkloadPilot    5: 6 op, 181450208.00 ns, 30.2417 ms/op
+WorkloadPilot    6: 7 op, 221447500.00 ns, 31.6354 ms/op
+WorkloadPilot    7: 8 op, 247460667.00 ns, 30.9326 ms/op
+WorkloadPilot    8: 9 op, 281192583.00 ns, 31.2436 ms/op
+WorkloadPilot    9: 10 op, 318303667.00 ns, 31.8304 ms/op
+WorkloadPilot   10: 11 op, 314079583.00 ns, 28.5527 ms/op
+WorkloadPilot   11: 12 op, 390106667.00 ns, 32.5089 ms/op
+WorkloadPilot   12: 13 op, 389319083.00 ns, 29.9476 ms/op
+WorkloadPilot   13: 14 op, 403129917.00 ns, 28.7950 ms/op
+WorkloadPilot   14: 15 op, 473537708.00 ns, 31.5692 ms/op
+WorkloadPilot   15: 16 op, 478185500.00 ns, 29.8866 ms/op
+WorkloadPilot   16: 32 op, 946880833.00 ns, 29.5900 ms/op
+
+WorkloadWarmup   1: 32 op, 976092500.00 ns, 30.5029 ms/op
+WorkloadWarmup   2: 32 op, 953504708.00 ns, 29.7970 ms/op
+WorkloadWarmup   3: 32 op, 1009204125.00 ns, 31.5376 ms/op
+WorkloadWarmup   4: 32 op, 997957208.00 ns, 31.1862 ms/op
+WorkloadWarmup   5: 32 op, 1035777583.00 ns, 32.3680 ms/op
+WorkloadWarmup   6: 32 op, 965493959.00 ns, 30.1717 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 32 op, 998126667.00 ns, 31.1915 ms/op
+WorkloadActual   2: 32 op, 1006110250.00 ns, 31.4409 ms/op
+WorkloadActual   3: 32 op, 1005741834.00 ns, 31.4294 ms/op
+WorkloadActual   4: 32 op, 994695000.00 ns, 31.0842 ms/op
+WorkloadActual   5: 32 op, 981283917.00 ns, 30.6651 ms/op
+WorkloadActual   6: 32 op, 946950458.00 ns, 29.5922 ms/op
+WorkloadActual   7: 32 op, 949470916.00 ns, 29.6710 ms/op
+WorkloadActual   8: 32 op, 985215750.00 ns, 30.7880 ms/op
+WorkloadActual   9: 32 op, 984189792.00 ns, 30.7559 ms/op
+WorkloadActual  10: 32 op, 969620917.00 ns, 30.3007 ms/op
+WorkloadActual  11: 32 op, 957486000.00 ns, 29.9214 ms/op
+WorkloadActual  12: 32 op, 914709875.00 ns, 28.5847 ms/op
+WorkloadActual  13: 32 op, 964820667.00 ns, 30.1506 ms/op
+WorkloadActual  14: 32 op, 977610125.00 ns, 30.5503 ms/op
+WorkloadActual  15: 32 op, 1015285542.00 ns, 31.7277 ms/op
+WorkloadActual  16: 32 op, 936423042.00 ns, 29.2632 ms/op
+WorkloadActual  17: 32 op, 1003575208.00 ns, 31.3617 ms/op
+WorkloadActual  18: 32 op, 973250250.00 ns, 30.4141 ms/op
+WorkloadActual  19: 32 op, 977520750.00 ns, 30.5475 ms/op
+WorkloadActual  20: 32 op, 954933375.00 ns, 29.8417 ms/op
+WorkloadActual  21: 32 op, 976610541.00 ns, 30.5191 ms/op
+WorkloadActual  22: 32 op, 1004893875.00 ns, 31.4029 ms/op
+WorkloadActual  23: 32 op, 999174667.00 ns, 31.2242 ms/op
+WorkloadActual  24: 32 op, 998644875.00 ns, 31.2077 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 32 op, 998126667.00 ns, 31.1915 ms/op
+WorkloadResult   2: 32 op, 1006110250.00 ns, 31.4409 ms/op
+WorkloadResult   3: 32 op, 1005741834.00 ns, 31.4294 ms/op
+WorkloadResult   4: 32 op, 994695000.00 ns, 31.0842 ms/op
+WorkloadResult   5: 32 op, 981283917.00 ns, 30.6651 ms/op
+WorkloadResult   6: 32 op, 946950458.00 ns, 29.5922 ms/op
+WorkloadResult   7: 32 op, 949470916.00 ns, 29.6710 ms/op
+WorkloadResult   8: 32 op, 985215750.00 ns, 30.7880 ms/op
+WorkloadResult   9: 32 op, 984189792.00 ns, 30.7559 ms/op
+WorkloadResult  10: 32 op, 969620917.00 ns, 30.3007 ms/op
+WorkloadResult  11: 32 op, 957486000.00 ns, 29.9214 ms/op
+WorkloadResult  12: 32 op, 914709875.00 ns, 28.5847 ms/op
+WorkloadResult  13: 32 op, 964820667.00 ns, 30.1506 ms/op
+WorkloadResult  14: 32 op, 977610125.00 ns, 30.5503 ms/op
+WorkloadResult  15: 32 op, 1015285542.00 ns, 31.7277 ms/op
+WorkloadResult  16: 32 op, 936423042.00 ns, 29.2632 ms/op
+WorkloadResult  17: 32 op, 1003575208.00 ns, 31.3617 ms/op
+WorkloadResult  18: 32 op, 973250250.00 ns, 30.4141 ms/op
+WorkloadResult  19: 32 op, 977520750.00 ns, 30.5475 ms/op
+WorkloadResult  20: 32 op, 954933375.00 ns, 29.8417 ms/op
+WorkloadResult  21: 32 op, 976610541.00 ns, 30.5191 ms/op
+WorkloadResult  22: 32 op, 1004893875.00 ns, 31.4029 ms/op
+WorkloadResult  23: 32 op, 999174667.00 ns, 31.2242 ms/op
+WorkloadResult  24: 32 op, 998644875.00 ns, 31.2077 ms/op
+GC:  0 0 0 123584 32
+Threading:  288 0 32
+
+// AfterAll
+// Benchmark Process 74433 has exited with code 0
+
+Mean = 30.568 ms, StdErr = 0.161 ms (0.53%), N = 24, StdDev = 0.791 ms
+Min = 28.585 ms, Q1 = 30.093 ms, Median = 30.608 ms, Q3 = 31.212 ms, Max = 31.728 ms
+IQR = 1.118 ms, LowerFence = 28.416 ms, UpperFence = 32.889 ms
+ConfidenceInterval = [29.960 ms; 31.176 ms] (CI 99.9%), Margin = 0.608 ms (1.99% of Mean)
+Skewness = -0.64, Kurtosis = 2.65, MValue = 2
+
+// **************************
+// Benchmark: ClassBenchmarks.IPComparisonScalarHalfParallel: DefaultJob
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "cc033887-c31c-40ae-b6c4-03c62b8dc19b.dll" --benchmarkName "cpuAssessment.Benchmark.Benchmarks.ClassBenchmarks.IPComparisonScalarHalfParallel" --job "Default" --benchmarkId 2 in /Users/besmith/Developer/Personal/cpuAssessment/src/cpuAssessment.Benchmark/bin/Release/net8.0/cc033887-c31c-40ae-b6c4-03c62b8dc19b/bin/Release/net8.0
+Failed to set up high priority. Make sure you have the right permissions. Message: Permission denied
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 8.0.1 (8.0.123.58001), Arm64 RyuJIT
+// GC=Concurrent Workstation
+// Job: DefaultJob
+
+OverheadJitting  1: 1 op, 120042.00 ns, 120.0420 us/op
+WorkloadJitting  1: 1 op, 113410958.00 ns, 113.4110 ms/op
+
+WorkloadPilot    1: 2 op, 397522875.00 ns, 198.7614 ms/op
+WorkloadPilot    2: 3 op, 125785000.00 ns, 41.9283 ms/op
+WorkloadPilot    3: 4 op, 200427250.00 ns, 50.1068 ms/op
+WorkloadPilot    4: 5 op, 227297459.00 ns, 45.4595 ms/op
+WorkloadPilot    5: 6 op, 204206208.00 ns, 34.0344 ms/op
+WorkloadPilot    6: 7 op, 277435458.00 ns, 39.6336 ms/op
+WorkloadPilot    7: 8 op, 345775917.00 ns, 43.2220 ms/op
+WorkloadPilot    8: 9 op, 361108792.00 ns, 40.1232 ms/op
+WorkloadPilot    9: 10 op, 417935666.00 ns, 41.7936 ms/op
+WorkloadPilot   10: 11 op, 432748584.00 ns, 39.3408 ms/op
+WorkloadPilot   11: 12 op, 472550875.00 ns, 39.3792 ms/op
+WorkloadPilot   12: 13 op, 474974667.00 ns, 36.5365 ms/op
+WorkloadPilot   13: 14 op, 595132541.00 ns, 42.5095 ms/op
+
+WorkloadWarmup   1: 14 op, 649921625.00 ns, 46.4230 ms/op
+WorkloadWarmup   2: 14 op, 487607458.00 ns, 34.8291 ms/op
+WorkloadWarmup   3: 14 op, 546055166.00 ns, 39.0039 ms/op
+WorkloadWarmup   4: 14 op, 582544959.00 ns, 41.6104 ms/op
+WorkloadWarmup   5: 14 op, 541579500.00 ns, 38.6842 ms/op
+WorkloadWarmup   6: 14 op, 578091458.00 ns, 41.2922 ms/op
+WorkloadWarmup   7: 14 op, 497599458.00 ns, 35.5428 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 14 op, 527261333.00 ns, 37.6615 ms/op
+WorkloadActual   2: 14 op, 559909166.00 ns, 39.9935 ms/op
+WorkloadActual   3: 14 op, 554420416.00 ns, 39.6015 ms/op
+WorkloadActual   4: 14 op, 561477167.00 ns, 40.1055 ms/op
+WorkloadActual   5: 14 op, 451741083.00 ns, 32.2672 ms/op
+WorkloadActual   6: 14 op, 529315250.00 ns, 37.8082 ms/op
+WorkloadActual   7: 14 op, 574734458.00 ns, 41.0525 ms/op
+WorkloadActual   8: 14 op, 499094583.00 ns, 35.6496 ms/op
+WorkloadActual   9: 14 op, 518201750.00 ns, 37.0144 ms/op
+WorkloadActual  10: 14 op, 552735125.00 ns, 39.4811 ms/op
+WorkloadActual  11: 14 op, 474331042.00 ns, 33.8808 ms/op
+WorkloadActual  12: 14 op, 530311584.00 ns, 37.8794 ms/op
+WorkloadActual  13: 14 op, 589019875.00 ns, 42.0728 ms/op
+WorkloadActual  14: 14 op, 466182458.00 ns, 33.2987 ms/op
+WorkloadActual  15: 14 op, 527208041.00 ns, 37.6577 ms/op
+WorkloadActual  16: 14 op, 570304125.00 ns, 40.7360 ms/op
+WorkloadActual  17: 14 op, 544671209.00 ns, 38.9051 ms/op
+WorkloadActual  18: 14 op, 591625625.00 ns, 42.2590 ms/op
+WorkloadActual  19: 14 op, 602220542.00 ns, 43.0158 ms/op
+WorkloadActual  20: 14 op, 609055833.00 ns, 43.5040 ms/op
+WorkloadActual  21: 14 op, 535870875.00 ns, 38.2765 ms/op
+WorkloadActual  22: 14 op, 604845458.00 ns, 43.2032 ms/op
+WorkloadActual  23: 14 op, 532172666.00 ns, 38.0123 ms/op
+WorkloadActual  24: 14 op, 558381792.00 ns, 39.8844 ms/op
+WorkloadActual  25: 14 op, 575685042.00 ns, 41.1204 ms/op
+WorkloadActual  26: 14 op, 587864167.00 ns, 41.9903 ms/op
+WorkloadActual  27: 14 op, 548558375.00 ns, 39.1827 ms/op
+WorkloadActual  28: 14 op, 619630208.00 ns, 44.2593 ms/op
+WorkloadActual  29: 14 op, 537138083.00 ns, 38.3670 ms/op
+WorkloadActual  30: 14 op, 548922667.00 ns, 39.2088 ms/op
+WorkloadActual  31: 14 op, 562163583.00 ns, 40.1545 ms/op
+WorkloadActual  32: 14 op, 567936458.00 ns, 40.5669 ms/op
+WorkloadActual  33: 14 op, 506863875.00 ns, 36.2046 ms/op
+WorkloadActual  34: 14 op, 472024875.00 ns, 33.7161 ms/op
+WorkloadActual  35: 14 op, 624352416.00 ns, 44.5966 ms/op
+WorkloadActual  36: 14 op, 574375917.00 ns, 41.0269 ms/op
+WorkloadActual  37: 14 op, 514399834.00 ns, 36.7428 ms/op
+WorkloadActual  38: 14 op, 621216125.00 ns, 44.3726 ms/op
+WorkloadActual  39: 14 op, 587154959.00 ns, 41.9396 ms/op
+WorkloadActual  40: 14 op, 522681209.00 ns, 37.3344 ms/op
+WorkloadActual  41: 14 op, 564766416.00 ns, 40.3405 ms/op
+WorkloadActual  42: 14 op, 546725708.00 ns, 39.0518 ms/op
+WorkloadActual  43: 14 op, 604706500.00 ns, 43.1933 ms/op
+WorkloadActual  44: 14 op, 539262417.00 ns, 38.5187 ms/op
+WorkloadActual  45: 14 op, 531563583.00 ns, 37.9688 ms/op
+WorkloadActual  46: 14 op, 519561917.00 ns, 37.1116 ms/op
+WorkloadActual  47: 14 op, 509794292.00 ns, 36.4139 ms/op
+WorkloadActual  48: 14 op, 495201875.00 ns, 35.3716 ms/op
+WorkloadActual  49: 14 op, 535023250.00 ns, 38.2159 ms/op
+WorkloadActual  50: 14 op, 542129583.00 ns, 38.7235 ms/op
+WorkloadActual  51: 14 op, 599961083.00 ns, 42.8544 ms/op
+WorkloadActual  52: 14 op, 655384833.00 ns, 46.8132 ms/op
+WorkloadActual  53: 14 op, 455250125.00 ns, 32.5179 ms/op
+WorkloadActual  54: 14 op, 474208666.00 ns, 33.8720 ms/op
+WorkloadActual  55: 14 op, 572900833.00 ns, 40.9215 ms/op
+WorkloadActual  56: 14 op, 574109541.00 ns, 41.0078 ms/op
+WorkloadActual  57: 14 op, 614006750.00 ns, 43.8576 ms/op
+WorkloadActual  58: 14 op, 488585417.00 ns, 34.8990 ms/op
+WorkloadActual  59: 14 op, 501848250.00 ns, 35.8463 ms/op
+WorkloadActual  60: 14 op, 571438875.00 ns, 40.8171 ms/op
+WorkloadActual  61: 14 op, 464373250.00 ns, 33.1695 ms/op
+WorkloadActual  62: 14 op, 583172791.00 ns, 41.6552 ms/op
+WorkloadActual  63: 14 op, 579921458.00 ns, 41.4230 ms/op
+WorkloadActual  64: 14 op, 539159041.00 ns, 38.5114 ms/op
+WorkloadActual  65: 14 op, 513641625.00 ns, 36.6887 ms/op
+WorkloadActual  66: 14 op, 575033667.00 ns, 41.0738 ms/op
+WorkloadActual  67: 14 op, 520382042.00 ns, 37.1701 ms/op
+WorkloadActual  68: 14 op, 551274792.00 ns, 39.3768 ms/op
+WorkloadActual  69: 14 op, 566949833.00 ns, 40.4964 ms/op
+WorkloadActual  70: 14 op, 631369333.00 ns, 45.0978 ms/op
+WorkloadActual  71: 14 op, 566196708.00 ns, 40.4426 ms/op
+WorkloadActual  72: 14 op, 539250000.00 ns, 38.5179 ms/op
+WorkloadActual  73: 14 op, 593421709.00 ns, 42.3873 ms/op
+WorkloadActual  74: 14 op, 571220750.00 ns, 40.8015 ms/op
+WorkloadActual  75: 14 op, 486753917.00 ns, 34.7681 ms/op
+WorkloadActual  76: 14 op, 568510250.00 ns, 40.6079 ms/op
+WorkloadActual  77: 14 op, 582041125.00 ns, 41.5744 ms/op
+WorkloadActual  78: 14 op, 498964500.00 ns, 35.6403 ms/op
+WorkloadActual  79: 14 op, 513923125.00 ns, 36.7088 ms/op
+WorkloadActual  80: 14 op, 513099125.00 ns, 36.6499 ms/op
+WorkloadActual  81: 14 op, 620943208.00 ns, 44.3531 ms/op
+WorkloadActual  82: 14 op, 575445291.00 ns, 41.1032 ms/op
+WorkloadActual  83: 14 op, 507801875.00 ns, 36.2716 ms/op
+WorkloadActual  84: 14 op, 534004000.00 ns, 38.1431 ms/op
+WorkloadActual  85: 14 op, 499357792.00 ns, 35.6684 ms/op
+WorkloadActual  86: 14 op, 468301042.00 ns, 33.4501 ms/op
+WorkloadActual  87: 14 op, 497618041.00 ns, 35.5441 ms/op
+WorkloadActual  88: 14 op, 548322375.00 ns, 39.1659 ms/op
+WorkloadActual  89: 14 op, 545569750.00 ns, 38.9693 ms/op
+WorkloadActual  90: 14 op, 502354417.00 ns, 35.8825 ms/op
+WorkloadActual  91: 14 op, 625985500.00 ns, 44.7133 ms/op
+WorkloadActual  92: 14 op, 522010625.00 ns, 37.2865 ms/op
+WorkloadActual  93: 14 op, 544258541.00 ns, 38.8756 ms/op
+WorkloadActual  94: 14 op, 596411000.00 ns, 42.6008 ms/op
+WorkloadActual  95: 14 op, 515107917.00 ns, 36.7934 ms/op
+WorkloadActual  96: 14 op, 499342625.00 ns, 35.6673 ms/op
+WorkloadActual  97: 14 op, 584396875.00 ns, 41.7426 ms/op
+WorkloadActual  98: 14 op, 575093750.00 ns, 41.0781 ms/op
+WorkloadActual  99: 14 op, 612740250.00 ns, 43.7672 ms/op
+WorkloadActual  100: 14 op, 521736625.00 ns, 37.2669 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 14 op, 527261333.00 ns, 37.6615 ms/op
+WorkloadResult   2: 14 op, 559909166.00 ns, 39.9935 ms/op
+WorkloadResult   3: 14 op, 554420416.00 ns, 39.6015 ms/op
+WorkloadResult   4: 14 op, 561477167.00 ns, 40.1055 ms/op
+WorkloadResult   5: 14 op, 451741083.00 ns, 32.2672 ms/op
+WorkloadResult   6: 14 op, 529315250.00 ns, 37.8082 ms/op
+WorkloadResult   7: 14 op, 574734458.00 ns, 41.0525 ms/op
+WorkloadResult   8: 14 op, 499094583.00 ns, 35.6496 ms/op
+WorkloadResult   9: 14 op, 518201750.00 ns, 37.0144 ms/op
+WorkloadResult  10: 14 op, 552735125.00 ns, 39.4811 ms/op
+WorkloadResult  11: 14 op, 474331042.00 ns, 33.8808 ms/op
+WorkloadResult  12: 14 op, 530311584.00 ns, 37.8794 ms/op
+WorkloadResult  13: 14 op, 589019875.00 ns, 42.0728 ms/op
+WorkloadResult  14: 14 op, 466182458.00 ns, 33.2987 ms/op
+WorkloadResult  15: 14 op, 527208041.00 ns, 37.6577 ms/op
+WorkloadResult  16: 14 op, 570304125.00 ns, 40.7360 ms/op
+WorkloadResult  17: 14 op, 544671209.00 ns, 38.9051 ms/op
+WorkloadResult  18: 14 op, 591625625.00 ns, 42.2590 ms/op
+WorkloadResult  19: 14 op, 602220542.00 ns, 43.0158 ms/op
+WorkloadResult  20: 14 op, 609055833.00 ns, 43.5040 ms/op
+WorkloadResult  21: 14 op, 535870875.00 ns, 38.2765 ms/op
+WorkloadResult  22: 14 op, 604845458.00 ns, 43.2032 ms/op
+WorkloadResult  23: 14 op, 532172666.00 ns, 38.0123 ms/op
+WorkloadResult  24: 14 op, 558381792.00 ns, 39.8844 ms/op
+WorkloadResult  25: 14 op, 575685042.00 ns, 41.1204 ms/op
+WorkloadResult  26: 14 op, 587864167.00 ns, 41.9903 ms/op
+WorkloadResult  27: 14 op, 548558375.00 ns, 39.1827 ms/op
+WorkloadResult  28: 14 op, 619630208.00 ns, 44.2593 ms/op
+WorkloadResult  29: 14 op, 537138083.00 ns, 38.3670 ms/op
+WorkloadResult  30: 14 op, 548922667.00 ns, 39.2088 ms/op
+WorkloadResult  31: 14 op, 562163583.00 ns, 40.1545 ms/op
+WorkloadResult  32: 14 op, 567936458.00 ns, 40.5669 ms/op
+WorkloadResult  33: 14 op, 506863875.00 ns, 36.2046 ms/op
+WorkloadResult  34: 14 op, 472024875.00 ns, 33.7161 ms/op
+WorkloadResult  35: 14 op, 624352416.00 ns, 44.5966 ms/op
+WorkloadResult  36: 14 op, 574375917.00 ns, 41.0269 ms/op
+WorkloadResult  37: 14 op, 514399834.00 ns, 36.7428 ms/op
+WorkloadResult  38: 14 op, 621216125.00 ns, 44.3726 ms/op
+WorkloadResult  39: 14 op, 587154959.00 ns, 41.9396 ms/op
+WorkloadResult  40: 14 op, 522681209.00 ns, 37.3344 ms/op
+WorkloadResult  41: 14 op, 564766416.00 ns, 40.3405 ms/op
+WorkloadResult  42: 14 op, 546725708.00 ns, 39.0518 ms/op
+WorkloadResult  43: 14 op, 604706500.00 ns, 43.1933 ms/op
+WorkloadResult  44: 14 op, 539262417.00 ns, 38.5187 ms/op
+WorkloadResult  45: 14 op, 531563583.00 ns, 37.9688 ms/op
+WorkloadResult  46: 14 op, 519561917.00 ns, 37.1116 ms/op
+WorkloadResult  47: 14 op, 509794292.00 ns, 36.4139 ms/op
+WorkloadResult  48: 14 op, 495201875.00 ns, 35.3716 ms/op
+WorkloadResult  49: 14 op, 535023250.00 ns, 38.2159 ms/op
+WorkloadResult  50: 14 op, 542129583.00 ns, 38.7235 ms/op
+WorkloadResult  51: 14 op, 599961083.00 ns, 42.8544 ms/op
+WorkloadResult  52: 14 op, 655384833.00 ns, 46.8132 ms/op
+WorkloadResult  53: 14 op, 455250125.00 ns, 32.5179 ms/op
+WorkloadResult  54: 14 op, 474208666.00 ns, 33.8720 ms/op
+WorkloadResult  55: 14 op, 572900833.00 ns, 40.9215 ms/op
+WorkloadResult  56: 14 op, 574109541.00 ns, 41.0078 ms/op
+WorkloadResult  57: 14 op, 614006750.00 ns, 43.8576 ms/op
+WorkloadResult  58: 14 op, 488585417.00 ns, 34.8990 ms/op
+WorkloadResult  59: 14 op, 501848250.00 ns, 35.8463 ms/op
+WorkloadResult  60: 14 op, 571438875.00 ns, 40.8171 ms/op
+WorkloadResult  61: 14 op, 464373250.00 ns, 33.1695 ms/op
+WorkloadResult  62: 14 op, 583172791.00 ns, 41.6552 ms/op
+WorkloadResult  63: 14 op, 579921458.00 ns, 41.4230 ms/op
+WorkloadResult  64: 14 op, 539159041.00 ns, 38.5114 ms/op
+WorkloadResult  65: 14 op, 513641625.00 ns, 36.6887 ms/op
+WorkloadResult  66: 14 op, 575033667.00 ns, 41.0738 ms/op
+WorkloadResult  67: 14 op, 520382042.00 ns, 37.1701 ms/op
+WorkloadResult  68: 14 op, 551274792.00 ns, 39.3768 ms/op
+WorkloadResult  69: 14 op, 566949833.00 ns, 40.4964 ms/op
+WorkloadResult  70: 14 op, 631369333.00 ns, 45.0978 ms/op
+WorkloadResult  71: 14 op, 566196708.00 ns, 40.4426 ms/op
+WorkloadResult  72: 14 op, 539250000.00 ns, 38.5179 ms/op
+WorkloadResult  73: 14 op, 593421709.00 ns, 42.3873 ms/op
+WorkloadResult  74: 14 op, 571220750.00 ns, 40.8015 ms/op
+WorkloadResult  75: 14 op, 486753917.00 ns, 34.7681 ms/op
+WorkloadResult  76: 14 op, 568510250.00 ns, 40.6079 ms/op
+WorkloadResult  77: 14 op, 582041125.00 ns, 41.5744 ms/op
+WorkloadResult  78: 14 op, 498964500.00 ns, 35.6403 ms/op
+WorkloadResult  79: 14 op, 513923125.00 ns, 36.7088 ms/op
+WorkloadResult  80: 14 op, 513099125.00 ns, 36.6499 ms/op
+WorkloadResult  81: 14 op, 620943208.00 ns, 44.3531 ms/op
+WorkloadResult  82: 14 op, 575445291.00 ns, 41.1032 ms/op
+WorkloadResult  83: 14 op, 507801875.00 ns, 36.2716 ms/op
+WorkloadResult  84: 14 op, 534004000.00 ns, 38.1431 ms/op
+WorkloadResult  85: 14 op, 499357792.00 ns, 35.6684 ms/op
+WorkloadResult  86: 14 op, 468301042.00 ns, 33.4501 ms/op
+WorkloadResult  87: 14 op, 497618041.00 ns, 35.5441 ms/op
+WorkloadResult  88: 14 op, 548322375.00 ns, 39.1659 ms/op
+WorkloadResult  89: 14 op, 545569750.00 ns, 38.9693 ms/op
+WorkloadResult  90: 14 op, 502354417.00 ns, 35.8825 ms/op
+WorkloadResult  91: 14 op, 625985500.00 ns, 44.7133 ms/op
+WorkloadResult  92: 14 op, 522010625.00 ns, 37.2865 ms/op
+WorkloadResult  93: 14 op, 544258541.00 ns, 38.8756 ms/op
+WorkloadResult  94: 14 op, 596411000.00 ns, 42.6008 ms/op
+WorkloadResult  95: 14 op, 515107917.00 ns, 36.7934 ms/op
+WorkloadResult  96: 14 op, 499342625.00 ns, 35.6673 ms/op
+WorkloadResult  97: 14 op, 584396875.00 ns, 41.7426 ms/op
+WorkloadResult  98: 14 op, 575093750.00 ns, 41.0781 ms/op
+WorkloadResult  99: 14 op, 612740250.00 ns, 43.7672 ms/op
+WorkloadResult  100: 14 op, 521736625.00 ns, 37.2669 ms/op
+GC:  0 0 0 38720 14
+Threading:  56 0 14
+
+// AfterAll
+// Benchmark Process 74542 has exited with code 0
+
+Mean = 39.134 ms, StdErr = 0.317 ms (0.81%), N = 100, StdDev = 3.171 ms
+Min = 32.267 ms, Q1 = 36.781 ms, Median = 39.109 ms, Q3 = 41.108 ms, Max = 46.813 ms
+IQR = 4.327 ms, LowerFence = 30.291 ms, UpperFence = 47.598 ms
+ConfidenceInterval = [38.059 ms; 40.210 ms] (CI 99.9%), Margin = 1.075 ms (2.75% of Mean)
+Skewness = -0.02, Kurtosis = 2.4, MValue = 4.43
+
+// **************************
+// Benchmark: ClassBenchmarks.IPComparisonScalarTwoParallel: DefaultJob
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "cc033887-c31c-40ae-b6c4-03c62b8dc19b.dll" --benchmarkName "cpuAssessment.Benchmark.Benchmarks.ClassBenchmarks.IPComparisonScalarTwoParallel" --job "Default" --benchmarkId 3 in /Users/besmith/Developer/Personal/cpuAssessment/src/cpuAssessment.Benchmark/bin/Release/net8.0/cc033887-c31c-40ae-b6c4-03c62b8dc19b/bin/Release/net8.0
+Failed to set up high priority. Make sure you have the right permissions. Message: Permission denied
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 8.0.1 (8.0.123.58001), Arm64 RyuJIT
+// GC=Concurrent Workstation
+// Job: DefaultJob
+
+OverheadJitting  1: 1 op, 111125.00 ns, 111.1250 us/op
+WorkloadJitting  1: 1 op, 230342916.00 ns, 230.3429 ms/op
+
+WorkloadPilot    1: 2 op, 152808458.00 ns, 76.4042 ms/op
+WorkloadPilot    2: 3 op, 227542542.00 ns, 75.8475 ms/op
+WorkloadPilot    3: 4 op, 305761542.00 ns, 76.4404 ms/op
+WorkloadPilot    4: 5 op, 381160208.00 ns, 76.2320 ms/op
+WorkloadPilot    5: 6 op, 493915334.00 ns, 82.3192 ms/op
+WorkloadPilot    6: 7 op, 712629333.00 ns, 101.8042 ms/op
+
+WorkloadWarmup   1: 7 op, 461576333.00 ns, 65.9395 ms/op
+WorkloadWarmup   2: 7 op, 411563208.00 ns, 58.7947 ms/op
+WorkloadWarmup   3: 7 op, 414649375.00 ns, 59.2356 ms/op
+WorkloadWarmup   4: 7 op, 563760458.00 ns, 80.5372 ms/op
+WorkloadWarmup   5: 7 op, 410069417.00 ns, 58.5813 ms/op
+WorkloadWarmup   6: 7 op, 414398792.00 ns, 59.1998 ms/op
+WorkloadWarmup   7: 7 op, 414448250.00 ns, 59.2069 ms/op
+WorkloadWarmup   8: 7 op, 420078500.00 ns, 60.0112 ms/op
+WorkloadWarmup   9: 7 op, 505851959.00 ns, 72.2646 ms/op
+WorkloadWarmup  10: 7 op, 413732417.00 ns, 59.1046 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 7 op, 438109416.00 ns, 62.5871 ms/op
+WorkloadActual   2: 7 op, 639314334.00 ns, 91.3306 ms/op
+WorkloadActual   3: 7 op, 412411959.00 ns, 58.9160 ms/op
+WorkloadActual   4: 7 op, 411726500.00 ns, 58.8181 ms/op
+WorkloadActual   5: 7 op, 416499167.00 ns, 59.4999 ms/op
+WorkloadActual   6: 7 op, 422758459.00 ns, 60.3941 ms/op
+WorkloadActual   7: 7 op, 409694917.00 ns, 58.5278 ms/op
+WorkloadActual   8: 7 op, 706361333.00 ns, 100.9088 ms/op
+WorkloadActual   9: 7 op, 411168166.00 ns, 58.7383 ms/op
+WorkloadActual  10: 7 op, 738192625.00 ns, 105.4561 ms/op
+WorkloadActual  11: 7 op, 422734625.00 ns, 60.3907 ms/op
+WorkloadActual  12: 7 op, 413514042.00 ns, 59.0734 ms/op
+WorkloadActual  13: 7 op, 505947125.00 ns, 72.2782 ms/op
+WorkloadActual  14: 7 op, 418112333.00 ns, 59.7303 ms/op
+WorkloadActual  15: 7 op, 597465416.00 ns, 85.3522 ms/op
+WorkloadActual  16: 7 op, 413964583.00 ns, 59.1378 ms/op
+WorkloadActual  17: 7 op, 406969250.00 ns, 58.1385 ms/op
+WorkloadActual  18: 7 op, 419052417.00 ns, 59.8646 ms/op
+WorkloadActual  19: 7 op, 465122750.00 ns, 66.4461 ms/op
+WorkloadActual  20: 7 op, 411649875.00 ns, 58.8071 ms/op
+WorkloadActual  21: 7 op, 415640417.00 ns, 59.3772 ms/op
+WorkloadActual  22: 7 op, 419205375.00 ns, 59.8865 ms/op
+WorkloadActual  23: 7 op, 422991708.00 ns, 60.4274 ms/op
+WorkloadActual  24: 7 op, 496029959.00 ns, 70.8614 ms/op
+WorkloadActual  25: 7 op, 417921500.00 ns, 59.7031 ms/op
+WorkloadActual  26: 7 op, 411378458.00 ns, 58.7684 ms/op
+WorkloadActual  27: 7 op, 412754000.00 ns, 58.9649 ms/op
+WorkloadActual  28: 7 op, 412688125.00 ns, 58.9554 ms/op
+WorkloadActual  29: 7 op, 435209958.00 ns, 62.1729 ms/op
+WorkloadActual  30: 7 op, 414590750.00 ns, 59.2272 ms/op
+WorkloadActual  31: 7 op, 414699916.00 ns, 59.2428 ms/op
+WorkloadActual  32: 7 op, 582934792.00 ns, 83.2764 ms/op
+WorkloadActual  33: 7 op, 425030209.00 ns, 60.7186 ms/op
+WorkloadActual  34: 7 op, 412455334.00 ns, 58.9222 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 7 op, 438109416.00 ns, 62.5871 ms/op
+WorkloadResult   2: 7 op, 412411959.00 ns, 58.9160 ms/op
+WorkloadResult   3: 7 op, 411726500.00 ns, 58.8181 ms/op
+WorkloadResult   4: 7 op, 416499167.00 ns, 59.4999 ms/op
+WorkloadResult   5: 7 op, 422758459.00 ns, 60.3941 ms/op
+WorkloadResult   6: 7 op, 409694917.00 ns, 58.5278 ms/op
+WorkloadResult   7: 7 op, 411168166.00 ns, 58.7383 ms/op
+WorkloadResult   8: 7 op, 422734625.00 ns, 60.3907 ms/op
+WorkloadResult   9: 7 op, 413514042.00 ns, 59.0734 ms/op
+WorkloadResult  10: 7 op, 418112333.00 ns, 59.7303 ms/op
+WorkloadResult  11: 7 op, 413964583.00 ns, 59.1378 ms/op
+WorkloadResult  12: 7 op, 406969250.00 ns, 58.1385 ms/op
+WorkloadResult  13: 7 op, 419052417.00 ns, 59.8646 ms/op
+WorkloadResult  14: 7 op, 465122750.00 ns, 66.4461 ms/op
+WorkloadResult  15: 7 op, 411649875.00 ns, 58.8071 ms/op
+WorkloadResult  16: 7 op, 415640417.00 ns, 59.3772 ms/op
+WorkloadResult  17: 7 op, 419205375.00 ns, 59.8865 ms/op
+WorkloadResult  18: 7 op, 422991708.00 ns, 60.4274 ms/op
+WorkloadResult  19: 7 op, 417921500.00 ns, 59.7031 ms/op
+WorkloadResult  20: 7 op, 411378458.00 ns, 58.7684 ms/op
+WorkloadResult  21: 7 op, 412754000.00 ns, 58.9649 ms/op
+WorkloadResult  22: 7 op, 412688125.00 ns, 58.9554 ms/op
+WorkloadResult  23: 7 op, 435209958.00 ns, 62.1729 ms/op
+WorkloadResult  24: 7 op, 414590750.00 ns, 59.2272 ms/op
+WorkloadResult  25: 7 op, 414699916.00 ns, 59.2428 ms/op
+WorkloadResult  26: 7 op, 425030209.00 ns, 60.7186 ms/op
+WorkloadResult  27: 7 op, 412455334.00 ns, 58.9222 ms/op
+GC:  0 0 0 14792 7
+Threading:  7 0 7
+
+// AfterAll
+// Benchmark Process 74792 has exited with code 0
+
+Mean = 59.831 ms, StdErr = 0.322 ms (0.54%), N = 27, StdDev = 1.674 ms
+Min = 58.138 ms, Q1 = 58.919 ms, Median = 59.243 ms, Q3 = 60.139 ms, Max = 66.446 ms
+IQR = 1.219 ms, LowerFence = 57.090 ms, UpperFence = 61.968 ms
+ConfidenceInterval = [58.637 ms; 61.025 ms] (CI 99.9%), Margin = 1.194 ms (2.00% of Mean)
+Skewness = 2.44, Kurtosis = 9.54, MValue = 2
+
+// **************************
+// Benchmark: ClassBenchmarks.IPComparisonScalarOneParallel: DefaultJob
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "cc033887-c31c-40ae-b6c4-03c62b8dc19b.dll" --benchmarkName "cpuAssessment.Benchmark.Benchmarks.ClassBenchmarks.IPComparisonScalarOneParallel" --job "Default" --benchmarkId 4 in /Users/besmith/Developer/Personal/cpuAssessment/src/cpuAssessment.Benchmark/bin/Release/net8.0/cc033887-c31c-40ae-b6c4-03c62b8dc19b/bin/Release/net8.0
+Failed to set up high priority. Make sure you have the right permissions. Message: Permission denied
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 8.0.1 (8.0.123.58001), Arm64 RyuJIT
+// GC=Concurrent Workstation
+// Job: DefaultJob
+
+OverheadJitting  1: 1 op, 98792.00 ns, 98.7920 us/op
+WorkloadJitting  1: 1 op, 307748375.00 ns, 307.7484 ms/op
+
+WorkloadPilot    1: 2 op, 302272625.00 ns, 151.1363 ms/op
+WorkloadPilot    2: 3 op, 446492500.00 ns, 148.8308 ms/op
+WorkloadPilot    3: 4 op, 587155167.00 ns, 146.7888 ms/op
+
+WorkloadWarmup   1: 4 op, 595445875.00 ns, 148.8615 ms/op
+WorkloadWarmup   2: 4 op, 598035667.00 ns, 149.5089 ms/op
+WorkloadWarmup   3: 4 op, 597981166.00 ns, 149.4953 ms/op
+WorkloadWarmup   4: 4 op, 599122042.00 ns, 149.7805 ms/op
+WorkloadWarmup   5: 4 op, 597651542.00 ns, 149.4129 ms/op
+WorkloadWarmup   6: 4 op, 548720000.00 ns, 137.1800 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 4 op, 534396542.00 ns, 133.5991 ms/op
+WorkloadActual   2: 4 op, 535107625.00 ns, 133.7769 ms/op
+WorkloadActual   3: 4 op, 534920583.00 ns, 133.7301 ms/op
+WorkloadActual   4: 4 op, 529572334.00 ns, 132.3931 ms/op
+WorkloadActual   5: 4 op, 528021125.00 ns, 132.0053 ms/op
+WorkloadActual   6: 4 op, 529853833.00 ns, 132.4635 ms/op
+WorkloadActual   7: 4 op, 512368958.00 ns, 128.0922 ms/op
+WorkloadActual   8: 4 op, 456487958.00 ns, 114.1220 ms/op
+WorkloadActual   9: 4 op, 454824667.00 ns, 113.7062 ms/op
+WorkloadActual  10: 4 op, 454445291.00 ns, 113.6113 ms/op
+WorkloadActual  11: 4 op, 457487166.00 ns, 114.3718 ms/op
+WorkloadActual  12: 4 op, 458990541.00 ns, 114.7476 ms/op
+WorkloadActual  13: 4 op, 456879542.00 ns, 114.2199 ms/op
+WorkloadActual  14: 4 op, 459379583.00 ns, 114.8449 ms/op
+WorkloadActual  15: 4 op, 459752333.00 ns, 114.9381 ms/op
+WorkloadActual  16: 4 op, 457478125.00 ns, 114.3695 ms/op
+WorkloadActual  17: 4 op, 458174791.00 ns, 114.5437 ms/op
+WorkloadActual  18: 4 op, 455834500.00 ns, 113.9586 ms/op
+WorkloadActual  19: 4 op, 452673250.00 ns, 113.1683 ms/op
+WorkloadActual  20: 4 op, 453959667.00 ns, 113.4899 ms/op
+WorkloadActual  21: 4 op, 457307500.00 ns, 114.3269 ms/op
+WorkloadActual  22: 4 op, 458412792.00 ns, 114.6032 ms/op
+WorkloadActual  23: 4 op, 458469000.00 ns, 114.6172 ms/op
+WorkloadActual  24: 4 op, 462074916.00 ns, 115.5187 ms/op
+WorkloadActual  25: 4 op, 458341667.00 ns, 114.5854 ms/op
+WorkloadActual  26: 4 op, 478693084.00 ns, 119.6733 ms/op
+WorkloadActual  27: 4 op, 454627666.00 ns, 113.6569 ms/op
+WorkloadActual  28: 4 op, 453523083.00 ns, 113.3808 ms/op
+WorkloadActual  29: 4 op, 458122667.00 ns, 114.5307 ms/op
+WorkloadActual  30: 4 op, 459986542.00 ns, 114.9966 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 4 op, 456487958.00 ns, 114.1220 ms/op
+WorkloadResult   2: 4 op, 454824667.00 ns, 113.7062 ms/op
+WorkloadResult   3: 4 op, 454445291.00 ns, 113.6113 ms/op
+WorkloadResult   4: 4 op, 457487166.00 ns, 114.3718 ms/op
+WorkloadResult   5: 4 op, 458990541.00 ns, 114.7476 ms/op
+WorkloadResult   6: 4 op, 456879542.00 ns, 114.2199 ms/op
+WorkloadResult   7: 4 op, 459379583.00 ns, 114.8449 ms/op
+WorkloadResult   8: 4 op, 459752333.00 ns, 114.9381 ms/op
+WorkloadResult   9: 4 op, 457478125.00 ns, 114.3695 ms/op
+WorkloadResult  10: 4 op, 458174791.00 ns, 114.5437 ms/op
+WorkloadResult  11: 4 op, 455834500.00 ns, 113.9586 ms/op
+WorkloadResult  12: 4 op, 452673250.00 ns, 113.1683 ms/op
+WorkloadResult  13: 4 op, 453959667.00 ns, 113.4899 ms/op
+WorkloadResult  14: 4 op, 457307500.00 ns, 114.3269 ms/op
+WorkloadResult  15: 4 op, 458412792.00 ns, 114.6032 ms/op
+WorkloadResult  16: 4 op, 458469000.00 ns, 114.6172 ms/op
+WorkloadResult  17: 4 op, 462074916.00 ns, 115.5187 ms/op
+WorkloadResult  18: 4 op, 458341667.00 ns, 114.5854 ms/op
+WorkloadResult  19: 4 op, 478693084.00 ns, 119.6733 ms/op
+WorkloadResult  20: 4 op, 454627666.00 ns, 113.6569 ms/op
+WorkloadResult  21: 4 op, 453523083.00 ns, 113.3808 ms/op
+WorkloadResult  22: 4 op, 458122667.00 ns, 114.5307 ms/op
+WorkloadResult  23: 4 op, 459986542.00 ns, 114.9966 ms/op
+GC:  0 0 0 7936 4
+Threading:  0 0 4
+
+// AfterAll
+// Benchmark Process 74892 has exited with code 0
+
+Mean = 114.521 ms, StdErr = 0.264 ms (0.23%), N = 23, StdDev = 1.265 ms
+Min = 113.168 ms, Q1 = 113.832 ms, Median = 114.372 ms, Q3 = 114.682 ms, Max = 119.673 ms
+IQR = 0.850 ms, LowerFence = 112.557 ms, UpperFence = 115.958 ms
+ConfidenceInterval = [113.521 ms; 115.521 ms] (CI 99.9%), Margin = 1.000 ms (0.87% of Mean)
+Skewness = 2.81, Kurtosis = 12.12, MValue = 2
+
+// **************************
+// Benchmark: ClassBenchmarks.IPComparisonScalarCoroutine: DefaultJob
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "cc033887-c31c-40ae-b6c4-03c62b8dc19b.dll" --benchmarkName "cpuAssessment.Benchmark.Benchmarks.ClassBenchmarks.IPComparisonScalarCoroutine" --job "Default" --benchmarkId 5 in /Users/besmith/Developer/Personal/cpuAssessment/src/cpuAssessment.Benchmark/bin/Release/net8.0/cc033887-c31c-40ae-b6c4-03c62b8dc19b/bin/Release/net8.0
+Failed to set up high priority. Make sure you have the right permissions. Message: Permission denied
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 8.0.1 (8.0.123.58001), Arm64 RyuJIT
+// GC=Concurrent Workstation
+// Job: DefaultJob
+
+OverheadJitting  1: 1 op, 115916.00 ns, 115.9160 us/op
+WorkloadJitting  1: 1 op, 456047708.00 ns, 456.0477 ms/op
+
+WorkloadWarmup   1: 1 op, 326761666.00 ns, 326.7617 ms/op
+WorkloadWarmup   2: 1 op, 325455667.00 ns, 325.4557 ms/op
+WorkloadWarmup   3: 1 op, 331220458.00 ns, 331.2205 ms/op
+WorkloadWarmup   4: 1 op, 326013292.00 ns, 326.0133 ms/op
+WorkloadWarmup   5: 1 op, 325064667.00 ns, 325.0647 ms/op
+WorkloadWarmup   6: 1 op, 326027500.00 ns, 326.0275 ms/op
+WorkloadWarmup   7: 1 op, 329909542.00 ns, 329.9095 ms/op
+WorkloadWarmup   8: 1 op, 326580000.00 ns, 326.5800 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 325769042.00 ns, 325.7690 ms/op
+WorkloadActual   2: 1 op, 325187875.00 ns, 325.1879 ms/op
+WorkloadActual   3: 1 op, 326504917.00 ns, 326.5049 ms/op
+WorkloadActual   4: 1 op, 328146291.00 ns, 328.1463 ms/op
+WorkloadActual   5: 1 op, 349902834.00 ns, 349.9028 ms/op
+WorkloadActual   6: 1 op, 332689208.00 ns, 332.6892 ms/op
+WorkloadActual   7: 1 op, 325245791.00 ns, 325.2458 ms/op
+WorkloadActual   8: 1 op, 325398833.00 ns, 325.3988 ms/op
+WorkloadActual   9: 1 op, 332023084.00 ns, 332.0231 ms/op
+WorkloadActual  10: 1 op, 325554916.00 ns, 325.5549 ms/op
+WorkloadActual  11: 1 op, 325245541.00 ns, 325.2455 ms/op
+WorkloadActual  12: 1 op, 327815625.00 ns, 327.8156 ms/op
+WorkloadActual  13: 1 op, 325424875.00 ns, 325.4249 ms/op
+WorkloadActual  14: 1 op, 325871084.00 ns, 325.8711 ms/op
+WorkloadActual  15: 1 op, 324602417.00 ns, 324.6024 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 325769042.00 ns, 325.7690 ms/op
+WorkloadResult   2: 1 op, 325187875.00 ns, 325.1879 ms/op
+WorkloadResult   3: 1 op, 326504917.00 ns, 326.5049 ms/op
+WorkloadResult   4: 1 op, 328146291.00 ns, 328.1463 ms/op
+WorkloadResult   5: 1 op, 325245791.00 ns, 325.2458 ms/op
+WorkloadResult   6: 1 op, 325398833.00 ns, 325.3988 ms/op
+WorkloadResult   7: 1 op, 325554916.00 ns, 325.5549 ms/op
+WorkloadResult   8: 1 op, 325245541.00 ns, 325.2455 ms/op
+WorkloadResult   9: 1 op, 327815625.00 ns, 327.8156 ms/op
+WorkloadResult  10: 1 op, 325424875.00 ns, 325.4249 ms/op
+WorkloadResult  11: 1 op, 325871084.00 ns, 325.8711 ms/op
+WorkloadResult  12: 1 op, 324602417.00 ns, 324.6024 ms/op
+GC:  128 0 0 805307096 1
+Threading:  0 0 1
+
+// AfterAll
+// Benchmark Process 74969 has exited with code 0
+
+Mean = 325.897 ms, StdErr = 0.311 ms (0.10%), N = 12, StdDev = 1.076 ms
+Min = 324.602 ms, Q1 = 325.246 ms, Median = 325.490 ms, Q3 = 326.030 ms, Max = 328.146 ms
+IQR = 0.784 ms, LowerFence = 324.070 ms, UpperFence = 327.205 ms
+ConfidenceInterval = [324.519 ms; 327.276 ms] (CI 99.9%), Margin = 1.379 ms (0.42% of Mean)
+Skewness = 1.02, Kurtosis = 2.66, MValue = 2
+
+// **************************
+// Benchmark: ClassBenchmarks.IPComparisonVectorSerial: DefaultJob
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "cc033887-c31c-40ae-b6c4-03c62b8dc19b.dll" --benchmarkName "cpuAssessment.Benchmark.Benchmarks.ClassBenchmarks.IPComparisonVectorSerial" --job "Default" --benchmarkId 6 in /Users/besmith/Developer/Personal/cpuAssessment/src/cpuAssessment.Benchmark/bin/Release/net8.0/cc033887-c31c-40ae-b6c4-03c62b8dc19b/bin/Release/net8.0
+Failed to set up high priority. Make sure you have the right permissions. Message: Permission denied
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 8.0.1 (8.0.123.58001), Arm64 RyuJIT
+// GC=Concurrent Workstation
+// Job: DefaultJob
+
+OverheadJitting  1: 1 op, 119250.00 ns, 119.2500 us/op
+WorkloadJitting  1: 1 op, 106847084.00 ns, 106.8471 ms/op
+
+WorkloadPilot    1: 2 op, 208258792.00 ns, 104.1294 ms/op
+WorkloadPilot    2: 3 op, 313645083.00 ns, 104.5484 ms/op
+WorkloadPilot    3: 4 op, 416753666.00 ns, 104.1884 ms/op
+WorkloadPilot    4: 5 op, 519918459.00 ns, 103.9837 ms/op
+
+WorkloadWarmup   1: 5 op, 520544125.00 ns, 104.1088 ms/op
+WorkloadWarmup   2: 5 op, 521491417.00 ns, 104.2983 ms/op
+WorkloadWarmup   3: 5 op, 517117250.00 ns, 103.4235 ms/op
+WorkloadWarmup   4: 5 op, 522569208.00 ns, 104.5138 ms/op
+WorkloadWarmup   5: 5 op, 522244083.00 ns, 104.4488 ms/op
+WorkloadWarmup   6: 5 op, 520513208.00 ns, 104.1026 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 5 op, 517940333.00 ns, 103.5881 ms/op
+WorkloadActual   2: 5 op, 519410166.00 ns, 103.8820 ms/op
+WorkloadActual   3: 5 op, 521435708.00 ns, 104.2871 ms/op
+WorkloadActual   4: 5 op, 520402666.00 ns, 104.0805 ms/op
+WorkloadActual   5: 5 op, 522119333.00 ns, 104.4239 ms/op
+WorkloadActual   6: 5 op, 519649917.00 ns, 103.9300 ms/op
+WorkloadActual   7: 5 op, 519083791.00 ns, 103.8168 ms/op
+WorkloadActual   8: 5 op, 518952250.00 ns, 103.7905 ms/op
+WorkloadActual   9: 5 op, 519369167.00 ns, 103.8738 ms/op
+WorkloadActual  10: 5 op, 521215666.00 ns, 104.2431 ms/op
+WorkloadActual  11: 5 op, 521095458.00 ns, 104.2191 ms/op
+WorkloadActual  12: 5 op, 520978583.00 ns, 104.1957 ms/op
+WorkloadActual  13: 5 op, 521896166.00 ns, 104.3792 ms/op
+WorkloadActual  14: 5 op, 518803000.00 ns, 103.7606 ms/op
+WorkloadActual  15: 5 op, 520557291.00 ns, 104.1115 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 5 op, 517940333.00 ns, 103.5881 ms/op
+WorkloadResult   2: 5 op, 519410166.00 ns, 103.8820 ms/op
+WorkloadResult   3: 5 op, 521435708.00 ns, 104.2871 ms/op
+WorkloadResult   4: 5 op, 520402666.00 ns, 104.0805 ms/op
+WorkloadResult   5: 5 op, 522119333.00 ns, 104.4239 ms/op
+WorkloadResult   6: 5 op, 519649917.00 ns, 103.9300 ms/op
+WorkloadResult   7: 5 op, 519083791.00 ns, 103.8168 ms/op
+WorkloadResult   8: 5 op, 518952250.00 ns, 103.7905 ms/op
+WorkloadResult   9: 5 op, 519369167.00 ns, 103.8738 ms/op
+WorkloadResult  10: 5 op, 521215666.00 ns, 104.2431 ms/op
+WorkloadResult  11: 5 op, 521095458.00 ns, 104.2191 ms/op
+WorkloadResult  12: 5 op, 520978583.00 ns, 104.1957 ms/op
+WorkloadResult  13: 5 op, 521896166.00 ns, 104.3792 ms/op
+WorkloadResult  14: 5 op, 518803000.00 ns, 103.7606 ms/op
+WorkloadResult  15: 5 op, 520557291.00 ns, 104.1115 ms/op
+GC:  0 0 0 672 5
+Threading:  0 0 5
+
+// AfterAll
+// Benchmark Process 75050 has exited with code 0
+
+Mean = 104.039 ms, StdErr = 0.065 ms (0.06%), N = 15, StdDev = 0.252 ms
+Min = 103.588 ms, Q1 = 103.845 ms, Median = 104.081 ms, Q3 = 104.231 ms, Max = 104.424 ms
+IQR = 0.386 ms, LowerFence = 103.267 ms, UpperFence = 104.810 ms
+ConfidenceInterval = [103.770 ms; 104.308 ms] (CI 99.9%), Margin = 0.269 ms (0.26% of Mean)
+Skewness = -0.08, Kurtosis = 1.62, MValue = 2
+
+// **************************
+// Benchmark: ClassBenchmarks.IPComparisonVectorMaxParallel: DefaultJob
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "cc033887-c31c-40ae-b6c4-03c62b8dc19b.dll" --benchmarkName "cpuAssessment.Benchmark.Benchmarks.ClassBenchmarks.IPComparisonVectorMaxParallel" --job "Default" --benchmarkId 7 in /Users/besmith/Developer/Personal/cpuAssessment/src/cpuAssessment.Benchmark/bin/Release/net8.0/cc033887-c31c-40ae-b6c4-03c62b8dc19b/bin/Release/net8.0
+Failed to set up high priority. Make sure you have the right permissions. Message: Permission denied
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 8.0.1 (8.0.123.58001), Arm64 RyuJIT
+// GC=Concurrent Workstation
+// Job: DefaultJob
+
+OverheadJitting  1: 1 op, 130917.00 ns, 130.9170 us/op
+WorkloadJitting  1: 1 op, 49159250.00 ns, 49.1593 ms/op
+
+WorkloadPilot    1: 2 op, 371098750.00 ns, 185.5494 ms/op
+WorkloadPilot    2: 3 op, 53064000.00 ns, 17.6880 ms/op
+WorkloadPilot    3: 4 op, 50241084.00 ns, 12.5603 ms/op
+WorkloadPilot    4: 5 op, 64714250.00 ns, 12.9428 ms/op
+WorkloadPilot    5: 6 op, 72519042.00 ns, 12.0865 ms/op
+WorkloadPilot    6: 7 op, 83327208.00 ns, 11.9039 ms/op
+WorkloadPilot    7: 8 op, 99180625.00 ns, 12.3976 ms/op
+WorkloadPilot    8: 9 op, 110231041.00 ns, 12.2479 ms/op
+WorkloadPilot    9: 10 op, 133518291.00 ns, 13.3518 ms/op
+WorkloadPilot   10: 11 op, 132836084.00 ns, 12.0760 ms/op
+WorkloadPilot   11: 12 op, 138488416.00 ns, 11.5407 ms/op
+WorkloadPilot   12: 13 op, 154983667.00 ns, 11.9218 ms/op
+WorkloadPilot   13: 14 op, 168151334.00 ns, 12.0108 ms/op
+WorkloadPilot   14: 15 op, 186212750.00 ns, 12.4142 ms/op
+WorkloadPilot   15: 16 op, 190717041.00 ns, 11.9198 ms/op
+WorkloadPilot   16: 32 op, 389763084.00 ns, 12.1801 ms/op
+WorkloadPilot   17: 64 op, 782850334.00 ns, 12.2320 ms/op
+
+WorkloadWarmup   1: 64 op, 780534166.00 ns, 12.1958 ms/op
+WorkloadWarmup   2: 64 op, 777499250.00 ns, 12.1484 ms/op
+WorkloadWarmup   3: 64 op, 783286667.00 ns, 12.2389 ms/op
+WorkloadWarmup   4: 64 op, 768818000.00 ns, 12.0128 ms/op
+WorkloadWarmup   5: 64 op, 778074250.00 ns, 12.1574 ms/op
+WorkloadWarmup   6: 64 op, 777749792.00 ns, 12.1523 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 64 op, 821221209.00 ns, 12.8316 ms/op
+WorkloadActual   2: 64 op, 785092458.00 ns, 12.2671 ms/op
+WorkloadActual   3: 64 op, 785540375.00 ns, 12.2741 ms/op
+WorkloadActual   4: 64 op, 779159583.00 ns, 12.1744 ms/op
+WorkloadActual   5: 64 op, 788261250.00 ns, 12.3166 ms/op
+WorkloadActual   6: 64 op, 763750458.00 ns, 11.9336 ms/op
+WorkloadActual   7: 64 op, 770022833.00 ns, 12.0316 ms/op
+WorkloadActual   8: 64 op, 773525875.00 ns, 12.0863 ms/op
+WorkloadActual   9: 64 op, 776278292.00 ns, 12.1293 ms/op
+WorkloadActual  10: 64 op, 807063583.00 ns, 12.6104 ms/op
+WorkloadActual  11: 64 op, 771566917.00 ns, 12.0557 ms/op
+WorkloadActual  12: 64 op, 783681167.00 ns, 12.2450 ms/op
+WorkloadActual  13: 64 op, 770260000.00 ns, 12.0353 ms/op
+WorkloadActual  14: 64 op, 764672666.00 ns, 11.9480 ms/op
+WorkloadActual  15: 64 op, 787815417.00 ns, 12.3096 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 64 op, 785092458.00 ns, 12.2671 ms/op
+WorkloadResult   2: 64 op, 785540375.00 ns, 12.2741 ms/op
+WorkloadResult   3: 64 op, 779159583.00 ns, 12.1744 ms/op
+WorkloadResult   4: 64 op, 788261250.00 ns, 12.3166 ms/op
+WorkloadResult   5: 64 op, 763750458.00 ns, 11.9336 ms/op
+WorkloadResult   6: 64 op, 770022833.00 ns, 12.0316 ms/op
+WorkloadResult   7: 64 op, 773525875.00 ns, 12.0863 ms/op
+WorkloadResult   8: 64 op, 776278292.00 ns, 12.1293 ms/op
+WorkloadResult   9: 64 op, 807063583.00 ns, 12.6104 ms/op
+WorkloadResult  10: 64 op, 771566917.00 ns, 12.0557 ms/op
+WorkloadResult  11: 64 op, 783681167.00 ns, 12.2450 ms/op
+WorkloadResult  12: 64 op, 770260000.00 ns, 12.0353 ms/op
+WorkloadResult  13: 64 op, 764672666.00 ns, 11.9480 ms/op
+WorkloadResult  14: 64 op, 787815417.00 ns, 12.3096 ms/op
+GC:  0 0 0 267880 64
+Threading:  576 0 64
+
+// AfterAll
+// Benchmark Process 75114 has exited with code 0
+
+Mean = 12.173 ms, StdErr = 0.048 ms (0.40%), N = 14, StdDev = 0.181 ms
+Min = 11.934 ms, Q1 = 12.040 ms, Median = 12.152 ms, Q3 = 12.272 ms, Max = 12.610 ms
+IQR = 0.232 ms, LowerFence = 11.693 ms, UpperFence = 12.620 ms
+ConfidenceInterval = [11.969 ms; 12.377 ms] (CI 99.9%), Margin = 0.204 ms (1.68% of Mean)
+Skewness = 0.71, Kurtosis = 2.98, MValue = 2
+
+// **************************
+// Benchmark: ClassBenchmarks.IPComparisonVectorHalfParallel: DefaultJob
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "cc033887-c31c-40ae-b6c4-03c62b8dc19b.dll" --benchmarkName "cpuAssessment.Benchmark.Benchmarks.ClassBenchmarks.IPComparisonVectorHalfParallel" --job "Default" --benchmarkId 8 in /Users/besmith/Developer/Personal/cpuAssessment/src/cpuAssessment.Benchmark/bin/Release/net8.0/cc033887-c31c-40ae-b6c4-03c62b8dc19b/bin/Release/net8.0
+Failed to set up high priority. Make sure you have the right permissions. Message: Permission denied
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 8.0.1 (8.0.123.58001), Arm64 RyuJIT
+// GC=Concurrent Workstation
+// Job: DefaultJob
+
+OverheadJitting  1: 1 op, 102542.00 ns, 102.5420 us/op
+WorkloadJitting  1: 1 op, 68234208.00 ns, 68.2342 ms/op
+
+WorkloadPilot    1: 2 op, 247040916.00 ns, 123.5205 ms/op
+WorkloadPilot    2: 3 op, 51093833.00 ns, 17.0313 ms/op
+WorkloadPilot    3: 4 op, 68268958.00 ns, 17.0672 ms/op
+WorkloadPilot    4: 5 op, 86905167.00 ns, 17.3810 ms/op
+WorkloadPilot    5: 6 op, 116003959.00 ns, 19.3340 ms/op
+WorkloadPilot    6: 7 op, 125600833.00 ns, 17.9430 ms/op
+WorkloadPilot    7: 8 op, 134224500.00 ns, 16.7781 ms/op
+WorkloadPilot    8: 9 op, 160200416.00 ns, 17.8000 ms/op
+WorkloadPilot    9: 10 op, 165681000.00 ns, 16.5681 ms/op
+WorkloadPilot   10: 11 op, 186297500.00 ns, 16.9361 ms/op
+WorkloadPilot   11: 12 op, 205618708.00 ns, 17.1349 ms/op
+WorkloadPilot   12: 13 op, 218809000.00 ns, 16.8315 ms/op
+WorkloadPilot   13: 14 op, 235283459.00 ns, 16.8060 ms/op
+WorkloadPilot   14: 15 op, 255736292.00 ns, 17.0491 ms/op
+WorkloadPilot   15: 16 op, 267851583.00 ns, 16.7407 ms/op
+WorkloadPilot   16: 32 op, 546479667.00 ns, 17.0775 ms/op
+
+WorkloadWarmup   1: 32 op, 528274791.00 ns, 16.5086 ms/op
+WorkloadWarmup   2: 32 op, 550504208.00 ns, 17.2033 ms/op
+WorkloadWarmup   3: 32 op, 546124625.00 ns, 17.0664 ms/op
+WorkloadWarmup   4: 32 op, 532473917.00 ns, 16.6398 ms/op
+WorkloadWarmup   5: 32 op, 554913500.00 ns, 17.3410 ms/op
+WorkloadWarmup   6: 32 op, 543833791.00 ns, 16.9948 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 32 op, 539319958.00 ns, 16.8537 ms/op
+WorkloadActual   2: 32 op, 534533125.00 ns, 16.7042 ms/op
+WorkloadActual   3: 32 op, 564260333.00 ns, 17.6331 ms/op
+WorkloadActual   4: 32 op, 536677208.00 ns, 16.7712 ms/op
+WorkloadActual   5: 32 op, 538618792.00 ns, 16.8318 ms/op
+WorkloadActual   6: 32 op, 545605458.00 ns, 17.0502 ms/op
+WorkloadActual   7: 32 op, 554090750.00 ns, 17.3153 ms/op
+WorkloadActual   8: 32 op, 562177875.00 ns, 17.5681 ms/op
+WorkloadActual   9: 32 op, 542792750.00 ns, 16.9623 ms/op
+WorkloadActual  10: 32 op, 548950917.00 ns, 17.1547 ms/op
+WorkloadActual  11: 32 op, 530094292.00 ns, 16.5654 ms/op
+WorkloadActual  12: 32 op, 540638250.00 ns, 16.8949 ms/op
+WorkloadActual  13: 32 op, 552815875.00 ns, 17.2755 ms/op
+WorkloadActual  14: 32 op, 545633958.00 ns, 17.0511 ms/op
+WorkloadActual  15: 32 op, 543812125.00 ns, 16.9941 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 32 op, 539319958.00 ns, 16.8537 ms/op
+WorkloadResult   2: 32 op, 534533125.00 ns, 16.7042 ms/op
+WorkloadResult   3: 32 op, 564260333.00 ns, 17.6331 ms/op
+WorkloadResult   4: 32 op, 536677208.00 ns, 16.7712 ms/op
+WorkloadResult   5: 32 op, 538618792.00 ns, 16.8318 ms/op
+WorkloadResult   6: 32 op, 545605458.00 ns, 17.0502 ms/op
+WorkloadResult   7: 32 op, 554090750.00 ns, 17.3153 ms/op
+WorkloadResult   8: 32 op, 562177875.00 ns, 17.5681 ms/op
+WorkloadResult   9: 32 op, 542792750.00 ns, 16.9623 ms/op
+WorkloadResult  10: 32 op, 548950917.00 ns, 17.1547 ms/op
+WorkloadResult  11: 32 op, 530094292.00 ns, 16.5654 ms/op
+WorkloadResult  12: 32 op, 540638250.00 ns, 16.8949 ms/op
+WorkloadResult  13: 32 op, 552815875.00 ns, 17.2755 ms/op
+WorkloadResult  14: 32 op, 545633958.00 ns, 17.0511 ms/op
+WorkloadResult  15: 32 op, 543812125.00 ns, 16.9941 ms/op
+GC:  0 0 0 90864 32
+Threading:  128 0 32
+
+// AfterAll
+// Benchmark Process 75197 has exited with code 0
+
+Mean = 17.042 ms, StdErr = 0.078 ms (0.46%), N = 15, StdDev = 0.304 ms
+Min = 16.565 ms, Q1 = 16.843 ms, Median = 16.994 ms, Q3 = 17.215 ms, Max = 17.633 ms
+IQR = 0.372 ms, LowerFence = 16.284 ms, UpperFence = 17.774 ms
+ConfidenceInterval = [16.717 ms; 17.367 ms] (CI 99.9%), Margin = 0.325 ms (1.91% of Mean)
+Skewness = 0.48, Kurtosis = 2.2, MValue = 2
+
+// **************************
+// Benchmark: ClassBenchmarks.IPComparisonVectorTwoParallel: DefaultJob
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "cc033887-c31c-40ae-b6c4-03c62b8dc19b.dll" --benchmarkName "cpuAssessment.Benchmark.Benchmarks.ClassBenchmarks.IPComparisonVectorTwoParallel" --job "Default" --benchmarkId 9 in /Users/besmith/Developer/Personal/cpuAssessment/src/cpuAssessment.Benchmark/bin/Release/net8.0/cc033887-c31c-40ae-b6c4-03c62b8dc19b/bin/Release/net8.0
+Failed to set up high priority. Make sure you have the right permissions. Message: Permission denied
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 8.0.1 (8.0.123.58001), Arm64 RyuJIT
+// GC=Concurrent Workstation
+// Job: DefaultJob
+
+OverheadJitting  1: 1 op, 108000.00 ns, 108.0000 us/op
+WorkloadJitting  1: 1 op, 149867291.00 ns, 149.8673 ms/op
+
+WorkloadPilot    1: 2 op, 257670750.00 ns, 128.8354 ms/op
+WorkloadPilot    2: 3 op, 114399000.00 ns, 38.1330 ms/op
+WorkloadPilot    3: 4 op, 169197041.00 ns, 42.2993 ms/op
+WorkloadPilot    4: 5 op, 190266042.00 ns, 38.0532 ms/op
+WorkloadPilot    5: 6 op, 229449458.00 ns, 38.2416 ms/op
+WorkloadPilot    6: 7 op, 265408750.00 ns, 37.9155 ms/op
+WorkloadPilot    7: 8 op, 314404625.00 ns, 39.3006 ms/op
+WorkloadPilot    8: 9 op, 337094917.00 ns, 37.4550 ms/op
+WorkloadPilot    9: 10 op, 372574875.00 ns, 37.2575 ms/op
+WorkloadPilot   10: 11 op, 421857541.00 ns, 38.3507 ms/op
+WorkloadPilot   11: 12 op, 483711083.00 ns, 40.3093 ms/op
+WorkloadPilot   12: 13 op, 486824375.00 ns, 37.4480 ms/op
+WorkloadPilot   13: 14 op, 522662458.00 ns, 37.3330 ms/op
+
+WorkloadWarmup   1: 14 op, 542963083.00 ns, 38.7831 ms/op
+WorkloadWarmup   2: 14 op, 524097084.00 ns, 37.4355 ms/op
+WorkloadWarmup   3: 14 op, 519878125.00 ns, 37.1342 ms/op
+WorkloadWarmup   4: 14 op, 524112791.00 ns, 37.4366 ms/op
+WorkloadWarmup   5: 14 op, 530722250.00 ns, 37.9087 ms/op
+WorkloadWarmup   6: 14 op, 558328666.00 ns, 39.8806 ms/op
+WorkloadWarmup   7: 14 op, 524670083.00 ns, 37.4764 ms/op
+WorkloadWarmup   8: 14 op, 522767750.00 ns, 37.3406 ms/op
+WorkloadWarmup   9: 14 op, 545078917.00 ns, 38.9342 ms/op
+WorkloadWarmup  10: 14 op, 521333958.00 ns, 37.2381 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 14 op, 524121667.00 ns, 37.4373 ms/op
+WorkloadActual   2: 14 op, 520677042.00 ns, 37.1912 ms/op
+WorkloadActual   3: 14 op, 526315042.00 ns, 37.5939 ms/op
+WorkloadActual   4: 14 op, 524806667.00 ns, 37.4862 ms/op
+WorkloadActual   5: 14 op, 524803250.00 ns, 37.4859 ms/op
+WorkloadActual   6: 14 op, 524939417.00 ns, 37.4957 ms/op
+WorkloadActual   7: 14 op, 525675875.00 ns, 37.5483 ms/op
+WorkloadActual   8: 14 op, 528715166.00 ns, 37.7654 ms/op
+WorkloadActual   9: 14 op, 525560834.00 ns, 37.5401 ms/op
+WorkloadActual  10: 14 op, 521550959.00 ns, 37.2536 ms/op
+WorkloadActual  11: 14 op, 583016041.00 ns, 41.6440 ms/op
+WorkloadActual  12: 14 op, 523089000.00 ns, 37.3635 ms/op
+WorkloadActual  13: 14 op, 524317833.00 ns, 37.4513 ms/op
+WorkloadActual  14: 14 op, 523261333.00 ns, 37.3758 ms/op
+WorkloadActual  15: 14 op, 529158917.00 ns, 37.7971 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 14 op, 524121667.00 ns, 37.4373 ms/op
+WorkloadResult   2: 14 op, 520677042.00 ns, 37.1912 ms/op
+WorkloadResult   3: 14 op, 526315042.00 ns, 37.5939 ms/op
+WorkloadResult   4: 14 op, 524806667.00 ns, 37.4862 ms/op
+WorkloadResult   5: 14 op, 524803250.00 ns, 37.4859 ms/op
+WorkloadResult   6: 14 op, 524939417.00 ns, 37.4957 ms/op
+WorkloadResult   7: 14 op, 525675875.00 ns, 37.5483 ms/op
+WorkloadResult   8: 14 op, 528715166.00 ns, 37.7654 ms/op
+WorkloadResult   9: 14 op, 525560834.00 ns, 37.5401 ms/op
+WorkloadResult  10: 14 op, 521550959.00 ns, 37.2536 ms/op
+WorkloadResult  11: 14 op, 523089000.00 ns, 37.3635 ms/op
+WorkloadResult  12: 14 op, 524317833.00 ns, 37.4513 ms/op
+WorkloadResult  13: 14 op, 523261333.00 ns, 37.3758 ms/op
+WorkloadResult  14: 14 op, 529158917.00 ns, 37.7971 ms/op
+GC:  0 0 0 29424 14
+Threading:  14 0 14
+
+// AfterAll
+// Benchmark Process 75285 has exited with code 0
+
+Mean = 37.485 ms, StdErr = 0.045 ms (0.12%), N = 14, StdDev = 0.168 ms
+Min = 37.191 ms, Q1 = 37.391 ms, Median = 37.486 ms, Q3 = 37.546 ms, Max = 37.797 ms
+IQR = 0.155 ms, LowerFence = 37.159 ms, UpperFence = 37.779 ms
+ConfidenceInterval = [37.296 ms; 37.674 ms] (CI 99.9%), Margin = 0.189 ms (0.50% of Mean)
+Skewness = 0.21, Kurtosis = 2.4, MValue = 2
+
+// **************************
+// Benchmark: ClassBenchmarks.IPComparisonVectorOneParallel: DefaultJob
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "cc033887-c31c-40ae-b6c4-03c62b8dc19b.dll" --benchmarkName "cpuAssessment.Benchmark.Benchmarks.ClassBenchmarks.IPComparisonVectorOneParallel" --job "Default" --benchmarkId 10 in /Users/besmith/Developer/Personal/cpuAssessment/src/cpuAssessment.Benchmark/bin/Release/net8.0/cc033887-c31c-40ae-b6c4-03c62b8dc19b/bin/Release/net8.0
+Failed to set up high priority. Make sure you have the right permissions. Message: Permission denied
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 8.0.1 (8.0.123.58001), Arm64 RyuJIT
+// GC=Concurrent Workstation
+// Job: DefaultJob
+
+OverheadJitting  1: 1 op, 114791.00 ns, 114.7910 us/op
+WorkloadJitting  1: 1 op, 238767583.00 ns, 238.7676 ms/op
+
+WorkloadPilot    1: 2 op, 148814292.00 ns, 74.4071 ms/op
+WorkloadPilot    2: 3 op, 221117750.00 ns, 73.7059 ms/op
+WorkloadPilot    3: 4 op, 294665333.00 ns, 73.6663 ms/op
+WorkloadPilot    4: 5 op, 367915458.00 ns, 73.5831 ms/op
+WorkloadPilot    5: 6 op, 438971791.00 ns, 73.1620 ms/op
+WorkloadPilot    6: 7 op, 515922500.00 ns, 73.7032 ms/op
+
+WorkloadWarmup   1: 7 op, 518388417.00 ns, 74.0555 ms/op
+WorkloadWarmup   2: 7 op, 510066125.00 ns, 72.8666 ms/op
+WorkloadWarmup   3: 7 op, 516228416.00 ns, 73.7469 ms/op
+WorkloadWarmup   4: 7 op, 513832750.00 ns, 73.4047 ms/op
+WorkloadWarmup   5: 7 op, 512498541.00 ns, 73.2141 ms/op
+WorkloadWarmup   6: 7 op, 505248250.00 ns, 72.1783 ms/op
+WorkloadWarmup   7: 7 op, 524991542.00 ns, 74.9988 ms/op
+WorkloadWarmup   8: 7 op, 507650875.00 ns, 72.5216 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 7 op, 503957250.00 ns, 71.9939 ms/op
+WorkloadActual   2: 7 op, 507544250.00 ns, 72.5063 ms/op
+WorkloadActual   3: 7 op, 507694792.00 ns, 72.5278 ms/op
+WorkloadActual   4: 7 op, 505802541.00 ns, 72.2575 ms/op
+WorkloadActual   5: 7 op, 507701250.00 ns, 72.5288 ms/op
+WorkloadActual   6: 7 op, 504388833.00 ns, 72.0555 ms/op
+WorkloadActual   7: 7 op, 503893500.00 ns, 71.9848 ms/op
+WorkloadActual   8: 7 op, 506894000.00 ns, 72.4134 ms/op
+WorkloadActual   9: 7 op, 507190292.00 ns, 72.4558 ms/op
+WorkloadActual  10: 7 op, 509849083.00 ns, 72.8356 ms/op
+WorkloadActual  11: 7 op, 503728750.00 ns, 71.9612 ms/op
+WorkloadActual  12: 7 op, 508276708.00 ns, 72.6110 ms/op
+WorkloadActual  13: 7 op, 508160000.00 ns, 72.5943 ms/op
+WorkloadActual  14: 7 op, 505897875.00 ns, 72.2711 ms/op
+WorkloadActual  15: 7 op, 506878917.00 ns, 72.4113 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 7 op, 503957250.00 ns, 71.9939 ms/op
+WorkloadResult   2: 7 op, 507544250.00 ns, 72.5063 ms/op
+WorkloadResult   3: 7 op, 507694792.00 ns, 72.5278 ms/op
+WorkloadResult   4: 7 op, 505802541.00 ns, 72.2575 ms/op
+WorkloadResult   5: 7 op, 507701250.00 ns, 72.5288 ms/op
+WorkloadResult   6: 7 op, 504388833.00 ns, 72.0555 ms/op
+WorkloadResult   7: 7 op, 503893500.00 ns, 71.9848 ms/op
+WorkloadResult   8: 7 op, 506894000.00 ns, 72.4134 ms/op
+WorkloadResult   9: 7 op, 507190292.00 ns, 72.4558 ms/op
+WorkloadResult  10: 7 op, 509849083.00 ns, 72.8356 ms/op
+WorkloadResult  11: 7 op, 503728750.00 ns, 71.9612 ms/op
+WorkloadResult  12: 7 op, 508276708.00 ns, 72.6110 ms/op
+WorkloadResult  13: 7 op, 508160000.00 ns, 72.5943 ms/op
+WorkloadResult  14: 7 op, 505897875.00 ns, 72.2711 ms/op
+WorkloadResult  15: 7 op, 506878917.00 ns, 72.4113 ms/op
+GC:  0 0 0 13384 7
+Threading:  0 0 7
+
+// AfterAll
+// Benchmark Process 75362 has exited with code 0
+
+Mean = 72.361 ms, StdErr = 0.068 ms (0.09%), N = 15, StdDev = 0.265 ms
+Min = 71.961 ms, Q1 = 72.157 ms, Median = 72.413 ms, Q3 = 72.528 ms, Max = 72.836 ms
+IQR = 0.372 ms, LowerFence = 71.599 ms, UpperFence = 73.086 ms
+ConfidenceInterval = [72.077 ms; 72.644 ms] (CI 99.9%), Margin = 0.283 ms (0.39% of Mean)
+Skewness = -0.17, Kurtosis = 1.79, MValue = 2
+
+// **************************
+// Benchmark: ClassBenchmarks.IPComparisonAsync: DefaultJob
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "cc033887-c31c-40ae-b6c4-03c62b8dc19b.dll" --benchmarkName "cpuAssessment.Benchmark.Benchmarks.ClassBenchmarks.IPComparisonAsync" --job "Default" --benchmarkId 11 in /Users/besmith/Developer/Personal/cpuAssessment/src/cpuAssessment.Benchmark/bin/Release/net8.0/cc033887-c31c-40ae-b6c4-03c62b8dc19b/bin/Release/net8.0
+Failed to set up high priority. Make sure you have the right permissions. Message: Permission denied
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 8.0.1 (8.0.123.58001), Arm64 RyuJIT
+// GC=Concurrent Workstation
+// Job: DefaultJob
+
+OverheadJitting  1: 1 op, 126292.00 ns, 126.2920 us/op
+WorkloadJitting  1: 1 op, 46755500.00 ns, 46.7555 ms/op
+
+WorkloadPilot    1: 2 op, 85194500.00 ns, 42.5973 ms/op
+WorkloadPilot    2: 3 op, 311592958.00 ns, 103.8643 ms/op
+WorkloadPilot    3: 4 op, 362996000.00 ns, 90.7490 ms/op
+WorkloadPilot    4: 5 op, 446020375.00 ns, 89.2041 ms/op
+WorkloadPilot    5: 6 op, 545649625.00 ns, 90.9416 ms/op
+
+WorkloadWarmup   1: 6 op, 254432458.00 ns, 42.4054 ms/op
+WorkloadWarmup   2: 6 op, 257318584.00 ns, 42.8864 ms/op
+WorkloadWarmup   3: 6 op, 247821833.00 ns, 41.3036 ms/op
+WorkloadWarmup   4: 6 op, 226625166.00 ns, 37.7709 ms/op
+WorkloadWarmup   5: 6 op, 240585958.00 ns, 40.0977 ms/op
+WorkloadWarmup   6: 6 op, 256355542.00 ns, 42.7259 ms/op
+WorkloadWarmup   7: 6 op, 245785792.00 ns, 40.9643 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 6 op, 242378875.00 ns, 40.3965 ms/op
+WorkloadActual   2: 6 op, 240098292.00 ns, 40.0164 ms/op
+WorkloadActual   3: 6 op, 224349833.00 ns, 37.3916 ms/op
+WorkloadActual   4: 6 op, 248051750.00 ns, 41.3420 ms/op
+WorkloadActual   5: 6 op, 267627291.00 ns, 44.6045 ms/op
+WorkloadActual   6: 6 op, 251839542.00 ns, 41.9733 ms/op
+WorkloadActual   7: 6 op, 251776625.00 ns, 41.9628 ms/op
+WorkloadActual   8: 6 op, 253586417.00 ns, 42.2644 ms/op
+WorkloadActual   9: 6 op, 240671750.00 ns, 40.1120 ms/op
+WorkloadActual  10: 6 op, 241842417.00 ns, 40.3071 ms/op
+WorkloadActual  11: 6 op, 251350125.00 ns, 41.8917 ms/op
+WorkloadActual  12: 6 op, 255256542.00 ns, 42.5428 ms/op
+WorkloadActual  13: 6 op, 251629750.00 ns, 41.9383 ms/op
+WorkloadActual  14: 6 op, 251269292.00 ns, 41.8782 ms/op
+WorkloadActual  15: 6 op, 245970292.00 ns, 40.9950 ms/op
+WorkloadActual  16: 6 op, 253766625.00 ns, 42.2944 ms/op
+WorkloadActual  17: 6 op, 252828625.00 ns, 42.1381 ms/op
+WorkloadActual  18: 6 op, 256884417.00 ns, 42.8141 ms/op
+WorkloadActual  19: 6 op, 248635541.00 ns, 41.4393 ms/op
+WorkloadActual  20: 6 op, 261734625.00 ns, 43.6224 ms/op
+WorkloadActual  21: 6 op, 246442125.00 ns, 41.0737 ms/op
+WorkloadActual  22: 6 op, 253451625.00 ns, 42.2419 ms/op
+WorkloadActual  23: 6 op, 259047500.00 ns, 43.1746 ms/op
+WorkloadActual  24: 6 op, 248121375.00 ns, 41.3536 ms/op
+WorkloadActual  25: 6 op, 255013875.00 ns, 42.5023 ms/op
+WorkloadActual  26: 6 op, 259714875.00 ns, 43.2858 ms/op
+WorkloadActual  27: 6 op, 257566208.00 ns, 42.9277 ms/op
+WorkloadActual  28: 6 op, 243403875.00 ns, 40.5673 ms/op
+WorkloadActual  29: 6 op, 251638625.00 ns, 41.9398 ms/op
+WorkloadActual  30: 6 op, 253900583.00 ns, 42.3168 ms/op
+WorkloadActual  31: 6 op, 251359584.00 ns, 41.8933 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 6 op, 242378875.00 ns, 40.3965 ms/op
+WorkloadResult   2: 6 op, 240098292.00 ns, 40.0164 ms/op
+WorkloadResult   3: 6 op, 224349833.00 ns, 37.3916 ms/op
+WorkloadResult   4: 6 op, 248051750.00 ns, 41.3420 ms/op
+WorkloadResult   5: 6 op, 251839542.00 ns, 41.9733 ms/op
+WorkloadResult   6: 6 op, 251776625.00 ns, 41.9628 ms/op
+WorkloadResult   7: 6 op, 253586417.00 ns, 42.2644 ms/op
+WorkloadResult   8: 6 op, 240671750.00 ns, 40.1120 ms/op
+WorkloadResult   9: 6 op, 241842417.00 ns, 40.3071 ms/op
+WorkloadResult  10: 6 op, 251350125.00 ns, 41.8917 ms/op
+WorkloadResult  11: 6 op, 255256542.00 ns, 42.5428 ms/op
+WorkloadResult  12: 6 op, 251629750.00 ns, 41.9383 ms/op
+WorkloadResult  13: 6 op, 251269292.00 ns, 41.8782 ms/op
+WorkloadResult  14: 6 op, 245970292.00 ns, 40.9950 ms/op
+WorkloadResult  15: 6 op, 253766625.00 ns, 42.2944 ms/op
+WorkloadResult  16: 6 op, 252828625.00 ns, 42.1381 ms/op
+WorkloadResult  17: 6 op, 256884417.00 ns, 42.8141 ms/op
+WorkloadResult  18: 6 op, 248635541.00 ns, 41.4393 ms/op
+WorkloadResult  19: 6 op, 261734625.00 ns, 43.6224 ms/op
+WorkloadResult  20: 6 op, 246442125.00 ns, 41.0737 ms/op
+WorkloadResult  21: 6 op, 253451625.00 ns, 42.2419 ms/op
+WorkloadResult  22: 6 op, 259047500.00 ns, 43.1746 ms/op
+WorkloadResult  23: 6 op, 248121375.00 ns, 41.3536 ms/op
+WorkloadResult  24: 6 op, 255013875.00 ns, 42.5023 ms/op
+WorkloadResult  25: 6 op, 259714875.00 ns, 43.2858 ms/op
+WorkloadResult  26: 6 op, 257566208.00 ns, 42.9277 ms/op
+WorkloadResult  27: 6 op, 243403875.00 ns, 40.5673 ms/op
+WorkloadResult  28: 6 op, 251638625.00 ns, 41.9398 ms/op
+WorkloadResult  29: 6 op, 253900583.00 ns, 42.3168 ms/op
+WorkloadResult  30: 6 op, 251359584.00 ns, 41.8933 ms/op
+GC:  0 0 0 1610622144 6
+Threading:  24 0 6
+
+// AfterAll
+// Benchmark Process 75417 has exited with code 0
+
+Mean = 41.687 ms, StdErr = 0.226 ms (0.54%), N = 30, StdDev = 1.238 ms
+Min = 37.392 ms, Q1 = 41.141 ms, Median = 41.939 ms, Q3 = 42.311 ms, Max = 43.622 ms
+IQR = 1.170 ms, LowerFence = 39.385 ms, UpperFence = 44.067 ms
+ConfidenceInterval = [40.860 ms; 42.514 ms] (CI 99.9%), Margin = 0.827 ms (1.98% of Mean)
+Skewness = -1.31, Kurtosis = 5.59, MValue = 2
+
+// ***** BenchmarkRunner: Finish  *****
+
+// * Export *
+  BenchmarkDotNet.Artifacts/results/cpuAssessment.Benchmark.Benchmarks.ClassBenchmarks-report.csv
+  BenchmarkDotNet.Artifacts/results/cpuAssessment.Benchmark.Benchmarks.ClassBenchmarks-report-github.md
+  BenchmarkDotNet.Artifacts/results/cpuAssessment.Benchmark.Benchmarks.ClassBenchmarks-report.html
+
+// * Detailed results *
+ClassBenchmarks.IPComparisonScalarSerial: DefaultJob
+Runtime = .NET 8.0.1 (8.0.123.58001), Arm64 RyuJIT; GC = Concurrent Workstation
+Mean = 41.277 ms, StdErr = 0.086 ms (0.21%), N = 15, StdDev = 0.332 ms
+Min = 40.751 ms, Q1 = 40.993 ms, Median = 41.368 ms, Q3 = 41.484 ms, Max = 41.901 ms
+IQR = 0.491 ms, LowerFence = 40.256 ms, UpperFence = 42.221 ms
+ConfidenceInterval = [40.922 ms; 41.632 ms] (CI 99.9%), Margin = 0.355 ms (0.86% of Mean)
+Skewness = -0.14, Kurtosis = 1.9, MValue = 2
+-------------------- Histogram --------------------
+[40.574 ms ; 42.078 ms) | @@@@@@@@@@@@@@@
+---------------------------------------------------
+
+ClassBenchmarks.IPComparisonScalarMaxParallel: DefaultJob
+Runtime = .NET 8.0.1 (8.0.123.58001), Arm64 RyuJIT; GC = Concurrent Workstation
+Mean = 30.568 ms, StdErr = 0.161 ms (0.53%), N = 24, StdDev = 0.791 ms
+Min = 28.585 ms, Q1 = 30.093 ms, Median = 30.608 ms, Q3 = 31.212 ms, Max = 31.728 ms
+IQR = 1.118 ms, LowerFence = 28.416 ms, UpperFence = 32.889 ms
+ConfidenceInterval = [29.960 ms; 31.176 ms] (CI 99.9%), Margin = 0.608 ms (1.99% of Mean)
+Skewness = -0.64, Kurtosis = 2.65, MValue = 2
+-------------------- Histogram --------------------
+[28.225 ms ; 29.107 ms) | @
+[29.107 ms ; 29.836 ms) | @@@
+[29.836 ms ; 30.556 ms) | @@@@@@@@
+[30.556 ms ; 32.087 ms) | @@@@@@@@@@@@
+---------------------------------------------------
+
+ClassBenchmarks.IPComparisonScalarHalfParallel: DefaultJob
+Runtime = .NET 8.0.1 (8.0.123.58001), Arm64 RyuJIT; GC = Concurrent Workstation
+Mean = 39.134 ms, StdErr = 0.317 ms (0.81%), N = 100, StdDev = 3.171 ms
+Min = 32.267 ms, Q1 = 36.781 ms, Median = 39.109 ms, Q3 = 41.108 ms, Max = 46.813 ms
+IQR = 4.327 ms, LowerFence = 30.291 ms, UpperFence = 47.598 ms
+ConfidenceInterval = [38.059 ms; 40.210 ms] (CI 99.9%), Margin = 1.075 ms (2.75% of Mean)
+Skewness = -0.02, Kurtosis = 2.4, MValue = 4.43
+-------------------- Histogram --------------------
+[32.177 ms ; 33.971 ms) | @@@@@@@@
+[33.971 ms ; 35.543 ms) | @@@
+[35.543 ms ; 37.621 ms) | @@@@@@@@@@@@@@@@@@@@@
+[37.621 ms ; 39.414 ms) | @@@@@@@@@@@@@@@@@@@@@@
+[39.414 ms ; 40.310 ms) | @@@@@@
+[40.310 ms ; 42.103 ms) | @@@@@@@@@@@@@@@@@@@@@@@
+[42.103 ms ; 42.968 ms) | @@@@
+[42.968 ms ; 44.761 ms) | @@@@@@@@@@@
+[44.761 ms ; 46.852 ms) | @@
+---------------------------------------------------
+
+ClassBenchmarks.IPComparisonScalarTwoParallel: DefaultJob
+Runtime = .NET 8.0.1 (8.0.123.58001), Arm64 RyuJIT; GC = Concurrent Workstation
+Mean = 59.831 ms, StdErr = 0.322 ms (0.54%), N = 27, StdDev = 1.674 ms
+Min = 58.138 ms, Q1 = 58.919 ms, Median = 59.243 ms, Q3 = 60.139 ms, Max = 66.446 ms
+IQR = 1.219 ms, LowerFence = 57.090 ms, UpperFence = 61.968 ms
+ConfidenceInterval = [58.637 ms; 61.025 ms] (CI 99.9%), Margin = 1.194 ms (2.00% of Mean)
+Skewness = 2.44, Kurtosis = 9.54, MValue = 2
+-------------------- Histogram --------------------
+[57.406 ms ; 59.940 ms) | @@@@@@@@@@@@@@@@@@@@
+[59.940 ms ; 61.648 ms) | @@@@
+[61.648 ms ; 63.112 ms) | @@
+[63.112 ms ; 65.714 ms) | 
+[65.714 ms ; 67.179 ms) | @
+---------------------------------------------------
+
+ClassBenchmarks.IPComparisonScalarOneParallel: DefaultJob
+Runtime = .NET 8.0.1 (8.0.123.58001), Arm64 RyuJIT; GC = Concurrent Workstation
+Mean = 114.521 ms, StdErr = 0.264 ms (0.23%), N = 23, StdDev = 1.265 ms
+Min = 113.168 ms, Q1 = 113.832 ms, Median = 114.372 ms, Q3 = 114.682 ms, Max = 119.673 ms
+IQR = 0.850 ms, LowerFence = 112.557 ms, UpperFence = 115.958 ms
+ConfidenceInterval = [113.521 ms; 115.521 ms] (CI 99.9%), Margin = 1.000 ms (0.87% of Mean)
+Skewness = 2.81, Kurtosis = 12.12, MValue = 2
+-------------------- Histogram --------------------
+[112.585 ms ; 115.622 ms) | @@@@@@@@@@@@@@@@@@@@@@
+[115.622 ms ; 120.257 ms) | @
+---------------------------------------------------
+
+ClassBenchmarks.IPComparisonScalarCoroutine: DefaultJob
+Runtime = .NET 8.0.1 (8.0.123.58001), Arm64 RyuJIT; GC = Concurrent Workstation
+Mean = 325.897 ms, StdErr = 0.311 ms (0.10%), N = 12, StdDev = 1.076 ms
+Min = 324.602 ms, Q1 = 325.246 ms, Median = 325.490 ms, Q3 = 326.030 ms, Max = 328.146 ms
+IQR = 0.784 ms, LowerFence = 324.070 ms, UpperFence = 327.205 ms
+ConfidenceInterval = [324.519 ms; 327.276 ms] (CI 99.9%), Margin = 1.379 ms (0.42% of Mean)
+Skewness = 1.02, Kurtosis = 2.66, MValue = 2
+-------------------- Histogram --------------------
+[323.985 ms ; 328.763 ms) | @@@@@@@@@@@@
+---------------------------------------------------
+
+ClassBenchmarks.IPComparisonVectorSerial: DefaultJob
+Runtime = .NET 8.0.1 (8.0.123.58001), Arm64 RyuJIT; GC = Concurrent Workstation
+Mean = 104.039 ms, StdErr = 0.065 ms (0.06%), N = 15, StdDev = 0.252 ms
+Min = 103.588 ms, Q1 = 103.845 ms, Median = 104.081 ms, Q3 = 104.231 ms, Max = 104.424 ms
+IQR = 0.386 ms, LowerFence = 103.267 ms, UpperFence = 104.810 ms
+ConfidenceInterval = [103.770 ms; 104.308 ms] (CI 99.9%), Margin = 0.269 ms (0.26% of Mean)
+Skewness = -0.08, Kurtosis = 1.62, MValue = 2
+-------------------- Histogram --------------------
+[103.454 ms ; 104.558 ms) | @@@@@@@@@@@@@@@
+---------------------------------------------------
+
+ClassBenchmarks.IPComparisonVectorMaxParallel: DefaultJob
+Runtime = .NET 8.0.1 (8.0.123.58001), Arm64 RyuJIT; GC = Concurrent Workstation
+Mean = 12.173 ms, StdErr = 0.048 ms (0.40%), N = 14, StdDev = 0.181 ms
+Min = 11.934 ms, Q1 = 12.040 ms, Median = 12.152 ms, Q3 = 12.272 ms, Max = 12.610 ms
+IQR = 0.232 ms, LowerFence = 11.693 ms, UpperFence = 12.620 ms
+ConfidenceInterval = [11.969 ms; 12.377 ms] (CI 99.9%), Margin = 0.204 ms (1.68% of Mean)
+Skewness = 0.71, Kurtosis = 2.98, MValue = 2
+-------------------- Histogram --------------------
+[11.890 ms ; 12.345 ms) | @@@@@@@@@@@@@
+[12.345 ms ; 12.709 ms) | @
+---------------------------------------------------
+
+ClassBenchmarks.IPComparisonVectorHalfParallel: DefaultJob
+Runtime = .NET 8.0.1 (8.0.123.58001), Arm64 RyuJIT; GC = Concurrent Workstation
+Mean = 17.042 ms, StdErr = 0.078 ms (0.46%), N = 15, StdDev = 0.304 ms
+Min = 16.565 ms, Q1 = 16.843 ms, Median = 16.994 ms, Q3 = 17.215 ms, Max = 17.633 ms
+IQR = 0.372 ms, LowerFence = 16.284 ms, UpperFence = 17.774 ms
+ConfidenceInterval = [16.717 ms; 17.367 ms] (CI 99.9%), Margin = 0.325 ms (1.91% of Mean)
+Skewness = 0.48, Kurtosis = 2.2, MValue = 2
+-------------------- Histogram --------------------
+[16.404 ms ; 16.742 ms) | @@
+[16.742 ms ; 17.407 ms) | @@@@@@@@@@@
+[17.407 ms ; 17.795 ms) | @@
+---------------------------------------------------
+
+ClassBenchmarks.IPComparisonVectorTwoParallel: DefaultJob
+Runtime = .NET 8.0.1 (8.0.123.58001), Arm64 RyuJIT; GC = Concurrent Workstation
+Mean = 37.485 ms, StdErr = 0.045 ms (0.12%), N = 14, StdDev = 0.168 ms
+Min = 37.191 ms, Q1 = 37.391 ms, Median = 37.486 ms, Q3 = 37.546 ms, Max = 37.797 ms
+IQR = 0.155 ms, LowerFence = 37.159 ms, UpperFence = 37.779 ms
+ConfidenceInterval = [37.296 ms; 37.674 ms] (CI 99.9%), Margin = 0.189 ms (0.50% of Mean)
+Skewness = 0.21, Kurtosis = 2.4, MValue = 2
+-------------------- Histogram --------------------
+[37.140 ms ; 37.888 ms) | @@@@@@@@@@@@@@
+---------------------------------------------------
+
+ClassBenchmarks.IPComparisonVectorOneParallel: DefaultJob
+Runtime = .NET 8.0.1 (8.0.123.58001), Arm64 RyuJIT; GC = Concurrent Workstation
+Mean = 72.361 ms, StdErr = 0.068 ms (0.09%), N = 15, StdDev = 0.265 ms
+Min = 71.961 ms, Q1 = 72.157 ms, Median = 72.413 ms, Q3 = 72.528 ms, Max = 72.836 ms
+IQR = 0.372 ms, LowerFence = 71.599 ms, UpperFence = 73.086 ms
+ConfidenceInterval = [72.077 ms; 72.644 ms] (CI 99.9%), Margin = 0.283 ms (0.39% of Mean)
+Skewness = -0.17, Kurtosis = 1.79, MValue = 2
+-------------------- Histogram --------------------
+[71.820 ms ; 72.977 ms) | @@@@@@@@@@@@@@@
+---------------------------------------------------
+
+ClassBenchmarks.IPComparisonAsync: DefaultJob
+Runtime = .NET 8.0.1 (8.0.123.58001), Arm64 RyuJIT; GC = Concurrent Workstation
+Mean = 41.687 ms, StdErr = 0.226 ms (0.54%), N = 30, StdDev = 1.238 ms
+Min = 37.392 ms, Q1 = 41.141 ms, Median = 41.939 ms, Q3 = 42.311 ms, Max = 43.622 ms
+IQR = 1.170 ms, LowerFence = 39.385 ms, UpperFence = 44.067 ms
+ConfidenceInterval = [40.860 ms; 42.514 ms] (CI 99.9%), Margin = 0.827 ms (1.98% of Mean)
+Skewness = -1.31, Kurtosis = 5.59, MValue = 2
+-------------------- Histogram --------------------
+[36.869 ms ; 37.914 ms) | @
+[37.914 ms ; 38.960 ms) | 
+[38.960 ms ; 40.395 ms) | @@@
+[40.395 ms ; 41.823 ms) | @@@@@@@
+[41.823 ms ; 42.869 ms) | @@@@@@@@@@@@@@@
+[42.869 ms ; 43.798 ms) | @@@@
+---------------------------------------------------
+
+// * Summary *
+
+BenchmarkDotNet=v0.13.0, OS=macOS 14.4.1 (23E224) [Darwin 23.4.0]
+Apple M1 Max, 1 CPU, 10 logical and 10 physical cores
+.NET SDK=8.0.101
+  [Host]     : .NET 8.0.1 (8.0.123.58001), Arm64 RyuJIT
+  DefaultJob : .NET 8.0.1 (8.0.123.58001), Arm64 RyuJIT
+
+
+|                         Method |      Mean |    Error |   StdDev | Ratio | RatioSD | Rank |       Gen 0 | Gen 1 | Gen 2 |     Allocated |
+|------------------------------- |----------:|---------:|---------:|------:|--------:|-----:|------------:|------:|------:|--------------:|
+|       IPComparisonScalarSerial |  41.28 ms | 0.355 ms | 0.332 ms |  1.00 |    0.00 |    6 |           - |     - |     - |          52 B |
+|  IPComparisonScalarMaxParallel |  30.57 ms | 0.608 ms | 0.791 ms |  0.74 |    0.02 |    3 |           - |     - |     - |       3,862 B |
+| IPComparisonScalarHalfParallel |  39.13 ms | 1.075 ms | 3.171 ms |  0.91 |    0.07 |    5 |           - |     - |     - |       2,766 B |
+|  IPComparisonScalarTwoParallel |  59.83 ms | 1.194 ms | 1.674 ms |  1.45 |    0.06 |    7 |           - |     - |     - |       2,113 B |
+|  IPComparisonScalarOneParallel | 114.52 ms | 1.000 ms | 1.265 ms |  2.77 |    0.03 |   10 |           - |     - |     - |       1,984 B |
+|    IPComparisonScalarCoroutine | 325.90 ms | 1.379 ms | 1.076 ms |  7.88 |    0.05 |   11 | 128000.0000 |     - |     - | 805,307,096 B |
+|       IPComparisonVectorSerial | 104.04 ms | 0.269 ms | 0.252 ms |  2.52 |    0.02 |    9 |           - |     - |     - |         134 B |
+|  IPComparisonVectorMaxParallel |  12.17 ms | 0.204 ms | 0.181 ms |  0.29 |    0.00 |    1 |           - |     - |     - |       4,186 B |
+| IPComparisonVectorHalfParallel |  17.04 ms | 0.325 ms | 0.304 ms |  0.41 |    0.01 |    2 |           - |     - |     - |       2,840 B |
+|  IPComparisonVectorTwoParallel |  37.48 ms | 0.189 ms | 0.168 ms |  0.91 |    0.01 |    4 |           - |     - |     - |       2,102 B |
+|  IPComparisonVectorOneParallel |  72.36 ms | 0.283 ms | 0.265 ms |  1.75 |    0.01 |    8 |           - |     - |     - |       1,912 B |
+|              IPComparisonAsync |  41.69 ms | 0.827 ms | 1.238 ms |  1.00 |    0.04 |    6 |           - |     - |     - | 268,437,024 B |
+
+// * Warnings *
+MultimodalDistribution
+  ClassBenchmarks.IPComparisonScalarHalfParallel: Default -> It seems that the distribution is multimodal (mValue = 4.43)
+
+// * Hints *
+Outliers
+  ClassBenchmarks.IPComparisonScalarTwoParallel: Default -> 7 outliers were removed (70.86 ms..105.46 ms)
+  ClassBenchmarks.IPComparisonScalarOneParallel: Default -> 7 outliers were removed (128.09 ms..133.78 ms)
+  ClassBenchmarks.IPComparisonScalarCoroutine: Default   -> 3 outliers were removed (332.02 ms..349.90 ms)
+  ClassBenchmarks.IPComparisonVectorMaxParallel: Default -> 1 outlier  was  removed (12.83 ms)
+  ClassBenchmarks.IPComparisonVectorTwoParallel: Default -> 1 outlier  was  removed (41.64 ms)
+  ClassBenchmarks.IPComparisonAsync: Default             -> 1 outlier  was  removed, 2 outliers were detected (37.39 ms, 44.60 ms)
+
+// * Legends *
+  Mean      : Arithmetic mean of all measurements
+  Error     : Half of 99.9% confidence interval
+  StdDev    : Standard deviation of all measurements
+  Ratio     : Mean of the ratio distribution ([Current]/[Baseline])
+  RatioSD   : Standard deviation of the ratio distribution ([Current]/[Baseline])
+  Rank      : Relative position of current benchmark mean among all benchmarks (Arabic style)
+  Gen 0     : GC Generation 0 collects per 1000 operations
+  Gen 1     : GC Generation 1 collects per 1000 operations
+  Gen 2     : GC Generation 2 collects per 1000 operations
+  Allocated : Allocated memory per single operation (managed only, inclusive, 1KB = 1024B)
+  1 ms      : 1 Millisecond (0.001 sec)
+
+// * Diagnostic Output - MemoryDiagnoser *
+
+
+// ***** BenchmarkRunner: End *****
+// ** Remained 0 benchmark(s) to run **
+Run time: 00:13:25 (805.51 sec), executed benchmarks: 12
+
+Global total time: 00:13:28 (808.01 sec), executed benchmarks: 12
+// * Artifacts cleanup *

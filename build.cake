@@ -49,13 +49,13 @@ Task("Major-Release")
 Task("Restore")
     .IsDependentOn("Version")
     .Does(() => {
-        DotNetCoreRestore(solutionFolder);
+        DotNetRestore(solutionFolder);
     });
 
 Task("Build")
     .IsDependentOn("Restore")
     .Does(() => {
-        DotNetCoreBuild(solutionFolder, new DotNetCoreBuildSettings{
+        DotNetBuild(solutionFolder, new DotNetBuildSettings{
             Configuration = DebugConfiguration,
             NoRestore = true
         });
@@ -64,7 +64,7 @@ Task("Build")
 Task("Test")
     .IsDependentOn("Build")
     .Does(() => {
-        DotNetCoreTest(solutionFolder, new DotNetCoreTestSettings{
+        DotNetTest(solutionFolder, new DotNetTestSettings{
             Configuration = DebugConfiguration,
             NoRestore = true,
             NoBuild = true
@@ -74,7 +74,7 @@ Task("Test")
 Task("Run")
     .IsDependentOn("Test")
     .Does(() => {
-        DotNetCoreRun(projFile, new DotNetCoreRunSettings{
+        DotNetRun(projFile, new DotNetRunSettings{
             Configuration = DebugConfiguration,
             NoRestore = true,
             NoBuild = true
@@ -85,7 +85,7 @@ Task("Run-Release")
     .IsDependentOn("Run")
     .Does(() => {
         var arguments = new ProcessArgumentBuilder();
-        DotNetCoreRun(projFile, arguments, new DotNetCoreRunSettings{
+        DotNetRun(projFile, arguments, new DotNetRunSettings{
             Configuration = ReleaseConfiguration,
             NoRestore = false,
             NoBuild = false
@@ -95,7 +95,7 @@ Task("Run-Release")
 Task("Benchmark")
     .IsDependentOn("Test")
     .Does(() => {
-        DotNetCoreRun(benchmark, new DotNetCoreRunSettings{
+        DotNetRun(benchmark, new DotNetRunSettings{
             Configuration = ReleaseConfiguration,
             NoRestore = false,
             NoBuild = false
@@ -105,7 +105,7 @@ Task("Benchmark")
 Task("Package")
     .IsDependentOn("Test")
     .Does(() => {
-        DotNetCorePack(solutionFolder, new DotNetCorePackSettings{
+        DotNetPack(solutionFolder, new DotNetPackSettings{
             Configuration = ReleaseConfiguration,
             OutputDirectory = outputFolder,
             NoRestore = true,
@@ -116,7 +116,7 @@ Task("Package")
 Task("Publish-Win-x64")
     .IsDependentOn("Test")
     .Does(() => {
-        DotNetCorePublish(projFile, new DotNetCorePublishSettings{
+        DotNetPublish(projFile, new DotNetPublishSettings{
             Configuration = ReleaseConfiguration,
             OutputDirectory = $"{ selfcontainedOutputFolder }/win-x64",
             PublishSingleFile = true,
@@ -128,7 +128,7 @@ Task("Publish-Win-x64")
 Task("Publish-Linux-x64")
     .IsDependentOn("Test")
     .Does(() => {
-        DotNetCorePublish(projFile, new DotNetCorePublishSettings{
+        DotNetPublish(projFile, new DotNetPublishSettings{
             Configuration = ReleaseConfiguration,
             OutputDirectory = $"{ selfcontainedOutputFolder }/linux-x64",
             PublishSingleFile = true,
@@ -140,7 +140,7 @@ Task("Publish-Linux-x64")
 Task("Publish-Osx-x64")
     .IsDependentOn("Test")
     .Does(() => {
-        DotNetCorePublish(projFile, new DotNetCorePublishSettings{
+        DotNetPublish(projFile, new DotNetPublishSettings{
             Configuration = ReleaseConfiguration,
             OutputDirectory = $"{ selfcontainedOutputFolder }/osx-x64",
             PublishSingleFile = true,
@@ -152,7 +152,7 @@ Task("Publish-Osx-x64")
 Task("Publish-Win-arm64")
     .IsDependentOn("Test")
     .Does(() => {
-        DotNetCorePublish(projFile, new DotNetCorePublishSettings{
+        DotNetPublish(projFile, new DotNetPublishSettings{
             Configuration = ReleaseConfiguration,
             OutputDirectory = $"{ selfcontainedOutputFolder }/win-arm64",
             PublishSingleFile = true,
@@ -164,7 +164,7 @@ Task("Publish-Win-arm64")
 Task("Publish-Win-x86")
     .IsDependentOn("Test")
     .Does(() => {
-        DotNetCorePublish(projFile, new DotNetCorePublishSettings{
+        DotNetPublish(projFile, new DotNetPublishSettings{
             Configuration = ReleaseConfiguration,
             OutputDirectory = $"{ selfcontainedOutputFolder }/win-x86",
             PublishSingleFile = true,
@@ -176,7 +176,7 @@ Task("Publish-Win-x86")
 Task("Publish-Dependent-Win-x64")
     .IsDependentOn("Test")
     .Does(() => {
-        DotNetCorePublish(projFile, new DotNetCorePublishSettings{
+        DotNetPublish(projFile, new DotNetPublishSettings{
             Configuration = ReleaseConfiguration,
             OutputDirectory = $"{ dependentOutputFolder }/win-x64",
             PublishSingleFile = true,
@@ -188,7 +188,7 @@ Task("Publish-Dependent-Win-x64")
 Task("Publish-Dependent-Linux-x64")
     .IsDependentOn("Test")
     .Does(() => {
-        DotNetCorePublish(projFile, new DotNetCorePublishSettings{
+        DotNetPublish(projFile, new DotNetPublishSettings{
             Configuration = ReleaseConfiguration,
             OutputDirectory = $"{ dependentOutputFolder }/linux-x64",
             PublishSingleFile = true,
@@ -200,7 +200,7 @@ Task("Publish-Dependent-Linux-x64")
 Task("Publish-Dependent-Osx-x64")
     .IsDependentOn("Test")
     .Does(() => {
-        DotNetCorePublish(projFile, new DotNetCorePublishSettings{
+        DotNetPublish(projFile, new DotNetPublishSettings{
             Configuration = ReleaseConfiguration,
             OutputDirectory = $"{ dependentOutputFolder }/osx-x64",
             PublishSingleFile = true,
@@ -212,7 +212,7 @@ Task("Publish-Dependent-Osx-x64")
 Task("Publish-Dependent-Win-arm64")
     .IsDependentOn("Test")
     .Does(() => {
-        DotNetCorePublish(projFile, new DotNetCorePublishSettings{
+        DotNetPublish(projFile, new DotNetPublishSettings{
             Configuration = ReleaseConfiguration,
             OutputDirectory = $"{ dependentOutputFolder }/win-arm64",
             PublishSingleFile = true,
@@ -224,7 +224,7 @@ Task("Publish-Dependent-Win-arm64")
 Task("Publish-Dependent-Win-x86")
     .IsDependentOn("Test")
     .Does(() => {
-        DotNetCorePublish(projFile, new DotNetCorePublishSettings{
+        DotNetPublish(projFile, new DotNetPublishSettings{
             Configuration = ReleaseConfiguration,
             OutputDirectory = $"{ dependentOutputFolder }/win-x86",
             PublishSingleFile = true,
